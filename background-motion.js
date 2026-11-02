@@ -59,7 +59,7 @@ export function createBackgroundMotion(canvas){
  function update(){
   cancelAnimationFrame(raf);raf=0;canvas.style.visibility=reduced?'hidden':'';
   if(reduced){clear();return;}
-  if(!document.hidden&&config){last=performance.now();raf=requestAnimationFrame(frame);}
+  if(!document.hidden&&config&&(config.water?.length||config.smoke?.length)){last=performance.now();raf=requestAnimationFrame(frame);}else if(config){clear();}
  }
  document.addEventListener('visibilitychange',update);
  return {

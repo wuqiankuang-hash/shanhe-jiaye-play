@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="scene-camera.css?v=12">
   <link rel="stylesheet" href="work-sprites.css?v=9">
   <link rel="stylesheet" href="play-hud.css?v=11">
+  <link rel="stylesheet" href="environment-assembly.css?v=4">
 </head>
 <body>
   <header class="masthead">
@@ -21,7 +22,7 @@
   <main class="game-layout" id="game">
     <section class="world-column" aria-label="动态地点画面">
       <div class="scene" id="scene">
-        <img class="scene-background" id="scene-image" alt="青岚村的山水生活" src="assets/home-v3.webp" fetchpriority="high">
+        <img class="scene-background" id="scene-image" alt="青岚村的山水生活" src="assets/environment-library-v1/home-terrain.webp" fetchpriority="high">
         <div class="scene-wash" aria-hidden="true"></div>
         <div class="scene-water" aria-hidden="true"></div>
         <canvas id="scene-motion" aria-hidden="true"></canvas>
@@ -66,6 +67,6 @@
     <button class="danger-button" id="new-game">重新开始一段生活</button>
   </dialog>
   <noscript><p class="noscript">请启用浏览器 JavaScript，才能开始经营与保存进度。</p></noscript>
-  <script type="module" src="app.js?v=14"></script>
+  <script type="module" src="app.js?v=15"></script>
 </body>
 </html>

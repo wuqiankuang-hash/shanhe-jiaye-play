@@ -1,0 +1,9 @@
+.assembled-environment{position:absolute;inset:0;z-index:1;pointer-events:none}.assembled-environment[hidden]{display:none}.environment-object{position:absolute;transform-origin:0 0;pointer-events:none}.environment-object img{width:100%;height:100%;display:block;object-fit:fill;transform-origin:50% 92%;pointer-events:none}.object-crop img,.object-plant img{clip-path:inset(0 0 13% 0)}.object-crop img{transform-origin:50% 85%}.has-wind img{animation:object-leaf-wind 5.8s ease-in-out infinite alternate}.object-canopy img{transform-origin:15% 75%;animation-duration:7s}.object-cloth img{transform-origin:50% 0;animation-duration:4.8s}.object-building,.object-wall,.object-trunk,.object-column,.object-roof,.object-post,.object-rail,.object-rock{animation:none!important}@keyframes object-leaf-wind{0%{transform:rotate(-.55deg)}100%{transform:rotate(.65deg)}}body.reduced-motion .environment-object img{animation:none!important}@media(prefers-reduced-motion:reduce){.environment-object img{animation:none!important}}
+
+.object-soil-bed{clip-path:polygon(4% 0,96% 18%,100% 100%,0 71%);filter:brightness(.68) saturate(.8)}
+
+.object-soil-bed{mask-image:radial-gradient(ellipse at center,#000 20%,#0009 53%,transparent 72%);filter:brightness(.8) saturate(.8)}
+
+.object-trunk img,.object-building img,.object-rock img,.object-prop img{filter:drop-shadow(1px 3px 2px #302b2330)}
+
+.environment-paused .has-wind img{animation-play-state:paused}
