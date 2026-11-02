@@ -1,0 +1,13 @@
+{
+  "animated": "neighbor-motion-v5.webp",
+  "poster": "neighbor-poster-v5.webp",
+  "duration": 2600,
+  "frames": 64,
+  "planted": true,
+  "contact": {
+    "frameHeight": 288,
+    "frameWidth": 256,
+    "groundY": 263,
+    "mask": "per-shoe"
+  }
+}

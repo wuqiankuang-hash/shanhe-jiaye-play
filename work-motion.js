@@ -123,8 +123,8 @@ function dispose(state) {
 }
 export function attachWorkMotion(actor, {type, duration, url} = {}) {
  const previous = byActor.get(actor); if (previous) dispose(previous);
- const manifest = new URL(url && /\.json(?:[?#]|$)/i.test(url) ? url : `assets/work/${type}-motion-v4.json`, document.baseURI).href;
- const state = {actor, visible:true, allowed:false, failed:false, playing:false, timer:null, idle:null, pending:null, image:null, asset:null, poster:assetUrl(`${type}-poster-v4.webp`, manifest)};
+ const manifest = new URL(url && /\.json(?:[?#]|$)/i.test(url) ? url : `assets/work/${type}-motion-v5.json`, document.baseURI).href;
+ const state = {actor, visible:true, allowed:false, failed:false, playing:false, timer:null, idle:null, pending:null, image:null, asset:null, poster:assetUrl(`${type}-poster-v5.webp`, manifest)};
  actors.add(state); byActor.set(actor, state); watch(); observer.observe(actor);
  actor.style.animation = 'none'; actor.style.backgroundPosition = '0% 0%';
  actor.dataset.motionMode = 'native-animated-webp'; actor.dataset.motionReady = 'false';
@@ -136,6 +136,7 @@ export function attachWorkMotion(actor, {type, duration, url} = {}) {
  loadMetadata(manifest).then(asset => {
   if (!actors.has(state)) return;
   state.asset = asset; state.poster = asset.poster;
+  if(asset.contact){const c=asset.contact;state.actor.style.setProperty('--shoe-empty-ratio',String((c.frameHeight-c.groundY)/c.frameWidth));state.actor.style.setProperty('--shoe-bottom',((c.frameHeight-c.groundY)/c.frameHeight*100)+'%');state.actor.dataset.contactMask=c.mask||'planted';}
   if (!state.image) installPoster(state);
   else if (!state.playing) state.image.src = state.poster;
   // The encoded file defines playback duration; caller timing cannot retime it.

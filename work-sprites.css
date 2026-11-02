@@ -7,3 +7,6 @@ body.reduced-motion .sprite-actor{animation-play-state:paused!important}
 .scene.camera-scene .scene-surface .sprite-actor{filter:none}
 .scene.camera-scene .scene-surface .npc::before{display:none}
 .sprite-actor::before{content:"";position:absolute;left:22%;bottom:3.4%;width:40%;height:3%;border-radius:50%;background:#26342338;filter:blur(2px);pointer-events:none}
+/* Each character's measured sole—not the cell's bottom—touches the ground. */
+.scene.camera-scene .scene-surface .sprite-actor{margin-bottom:calc(-240px * var(--shoe-empty-ratio,.05))}
+.sprite-actor::before{bottom:calc(var(--shoe-bottom,4.5%) - 1.5%)}

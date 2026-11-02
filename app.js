@@ -1,7 +1,7 @@
 import {createSceneAssets} from './scene-assets.js?v=8';
 import {createSceneCamera} from './scene-camera.js?v=4';
 import {createMapScreen} from './map-screen.js';
-import {createWorkActor} from './work-actors.js?v=8';
+import {createWorkActor} from './work-actors.js?v=9';
 import {newGame,reduce,getActions,validate,exportSave,importSave,businessCatalog,itemCatalog,locationCatalog,skillLabels,priceCatalog,quoteSale,dailyAccounts,season,timeLabel} from './engine.js';
 
 const SAVE_KEY='shanhe-jiaye-text-v1';

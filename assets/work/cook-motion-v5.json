@@ -1,0 +1,13 @@
+{
+  "animated": "cook-motion-v4.webp",
+  "poster": "cook-poster-v5.webp",
+  "duration": 2400,
+  "frames": 64,
+  "planted": true,
+  "contact": {
+    "frameHeight": 288,
+    "frameWidth": 256,
+    "groundY": 273,
+    "mask": "preserved-v4"
+  }
+}
