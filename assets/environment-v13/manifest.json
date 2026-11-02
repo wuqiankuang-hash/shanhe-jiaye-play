@@ -1,0 +1,371 @@
+{
+ "scenes": {
+  "field": {
+   "pieces": [
+    {
+     "asset": "assets/environment-v13/field-leaves-0.webp",
+     "id": "field-leaves-0",
+     "phase": 0.0,
+     "pivot": [
+      82.5,
+      150.0
+     ],
+     "pixels": 16163,
+     "rect": [
+      405.0,
+      0.0,
+      165.0,
+      150.0
+     ],
+     "underlay": "assets/environment-v13/field-leaves-0-underlay.webp"
+    },
+    {
+     "asset": "assets/environment-v13/field-leaves-1.webp",
+     "id": "field-leaves-1",
+     "phase": 1.7,
+     "pivot": [
+      105.0,
+      51.0
+     ],
+     "pixels": 7302,
+     "rect": [
+      45.0,
+      389.0,
+      210.0,
+      51.0
+     ],
+     "underlay": "assets/environment-v13/field-leaves-1-underlay.webp"
+    },
+    {
+     "asset": "assets/environment-v13/field-leaves-2.webp",
+     "id": "field-leaves-2",
+     "phase": 3.4,
+     "pivot": [
+      61.0,
+      100.0
+     ],
+     "pixels": 6303,
+     "rect": [
+      37.0,
+      668.0,
+      122.0,
+      100.0
+     ],
+     "underlay": "assets/environment-v13/field-leaves-2-underlay.webp"
+    }
+   ],
+   "smoke": [],
+   "water": [
+    [
+     [
+      1414.0,
+      666.0
+     ],
+     [
+      1433.0,
+      666.0
+     ],
+     [
+      1445.0,
+      705.0
+     ],
+     [
+      1485.0,
+      748.0
+     ],
+     [
+      1468.0,
+      764.0
+     ],
+     [
+      1440.0,
+      720.0
+     ]
+    ]
+   ]
+  },
+  "home": {
+   "pieces": [
+    {
+     "asset": "assets/environment-v13/home-leaves-0.webp",
+     "id": "home-leaves-0",
+     "phase": 0.0,
+     "pivot": [
+      100.0,
+      92.0
+     ],
+     "pixels": 11553,
+     "rect": [
+      310.0,
+      5.0,
+      200.0,
+      92.0
+     ],
+     "underlay": "assets/environment-v13/home-leaves-0-underlay.webp"
+    },
+    {
+     "asset": "assets/environment-v13/home-leaves-1.webp",
+     "id": "home-leaves-1",
+     "phase": 1.7,
+     "pivot": [
+      65.0,
+      123.0
+     ],
+     "pixels": 6763,
+     "rect": [
+      110.0,
+      185.0,
+      130.0,
+      123.0
+     ],
+     "underlay": "assets/environment-v13/home-leaves-1-underlay.webp"
+    },
+    {
+     "asset": "assets/environment-v13/home-leaves-2.webp",
+     "id": "home-leaves-2",
+     "phase": 3.4,
+     "pivot": [
+      77.5,
+      160.0
+     ],
+     "pixels": 8963,
+     "rect": [
+      1510.0,
+      275.0,
+      155.0,
+      160.0
+     ],
+     "underlay": "assets/environment-v13/home-leaves-2-underlay.webp"
+    }
+   ],
+   "smoke": [],
+   "water": []
+  },
+  "market": {
+   "pieces": [
+    {
+     "asset": "assets/environment-v13/market-leaves-0.webp",
+     "id": "market-leaves-0",
+     "phase": 0.0,
+     "pivot": [
+      87.5,
+      99.0
+     ],
+     "pixels": 5708,
+     "rect": [
+      215.0,
+      0.0,
+      175.0,
+      99.0
+     ],
+     "underlay": "assets/environment-v13/market-leaves-0-underlay.webp"
+    },
+    {
+     "asset": "assets/environment-v13/market-leaves-1.webp",
+     "id": "market-leaves-1",
+     "phase": 1.7,
+     "pivot": [
+      55.0,
+      90.0
+     ],
+     "pixels": 3228,
+     "rect": [
+      0.0,
+      100.0,
+      110.0,
+      90.0
+     ],
+     "underlay": "assets/environment-v13/market-leaves-1-underlay.webp"
+    },
+    {
+     "asset": "assets/environment-v13/market-leaves-2.webp",
+     "id": "market-leaves-2",
+     "phase": 3.4,
+     "pivot": [
+      75.0,
+      160.0
+     ],
+     "pixels": 9780,
+     "rect": [
+      54.0,
+      730.0,
+      150.0,
+      160.0
+     ],
+     "underlay": "assets/environment-v13/market-leaves-2-underlay.webp"
+    }
+   ],
+   "smoke": [
+    1340.0,
+    330.0
+   ],
+   "water": []
+  },
+  "pond": {
+   "pieces": [
+    {
+     "asset": "assets/environment-v13/pond-leaves-0.webp",
+     "id": "pond-leaves-0",
+     "phase": 0.0,
+     "pivot": [
+      90.0,
+      105.0
+     ],
+     "pixels": 11568,
+     "rect": [
+      300.0,
+      0.0,
+      180.0,
+      105.0
+     ],
+     "underlay": "assets/environment-v13/pond-leaves-0-underlay.webp"
+    },
+    {
+     "asset": "assets/environment-v13/pond-leaves-1.webp",
+     "id": "pond-leaves-1",
+     "phase": 1.7,
+     "pivot": [
+      87.5,
+      92.0
+     ],
+     "pixels": 7985,
+     "rect": [
+      550.0,
+      159.0,
+      175.0,
+      92.0
+     ],
+     "underlay": "assets/environment-v13/pond-leaves-1-underlay.webp"
+    },
+    {
+     "asset": "assets/environment-v13/pond-leaves-2.webp",
+     "id": "pond-leaves-2",
+     "phase": 3.4,
+     "pivot": [
+      85.0,
+      90.0
+     ],
+     "pixels": 9046,
+     "rect": [
+      1270.0,
+      845.0,
+      170.0,
+      90.0
+     ],
+     "underlay": "assets/environment-v13/pond-leaves-2-underlay.webp"
+    }
+   ],
+   "smoke": [],
+   "water": [
+    [
+     [
+      790.0,
+      326.0
+     ],
+     [
+      1050.0,
+      315.0
+     ],
+     [
+      1250.0,
+      353.0
+     ],
+     [
+      1440.0,
+      416.0
+     ],
+     [
+      1570.0,
+      505.0
+     ],
+     [
+      1510.0,
+      720.0
+     ],
+     [
+      1290.0,
+      722.0
+     ],
+     [
+      1110.0,
+      623.0
+     ],
+     [
+      970.0,
+      527.0
+     ],
+     [
+      830.0,
+      470.0
+     ],
+     [
+      730.0,
+      403.0
+     ]
+    ]
+   ]
+  },
+  "village": {
+   "pieces": [
+    {
+     "asset": "assets/environment-v13/village-leaves-0.webp",
+     "id": "village-leaves-0",
+     "phase": 0.0,
+     "pivot": [
+      68.5,
+      90.0
+     ],
+     "pixels": 1255,
+     "rect": [
+      305.0,
+      0.0,
+      137.0,
+      90.0
+     ],
+     "underlay": "assets/environment-v13/village-leaves-0-underlay.webp"
+    },
+    {
+     "asset": "assets/environment-v13/village-leaves-1.webp",
+     "id": "village-leaves-1",
+     "phase": 1.7,
+     "pivot": [
+      75.5,
+      110.0
+     ],
+     "pixels": 6968,
+     "rect": [
+      580.0,
+      0.0,
+      151.0,
+      110.0
+     ],
+     "underlay": "assets/environment-v13/village-leaves-1-underlay.webp"
+    },
+    {
+     "asset": "assets/environment-v13/village-leaves-2.webp",
+     "id": "village-leaves-2",
+     "phase": 3.4,
+     "pivot": [
+      88.0,
+      106.0
+     ],
+     "pixels": 12553,
+     "rect": [
+      1490.0,
+      158.0,
+      176.0,
+      106.0
+     ],
+     "underlay": "assets/environment-v13/village-leaves-2-underlay.webp"
+    }
+   ],
+   "smoke": [],
+   "water": []
+  }
+ },
+ "sourceSize": [
+  1672,
+  941
+ ],
+ "version": 13
+}

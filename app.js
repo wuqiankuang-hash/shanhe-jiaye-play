@@ -1,4 +1,4 @@
-import {createBackgroundMotion} from './background-motion.js?v=12';
+import {createBackgroundMotion} from './background-motion.js?v=14';
 import {hudIcon} from './hud-icons.js?v=11';
 import {createSceneAssets} from './scene-assets.js?v=8';
 import {createSceneCamera} from './scene-camera.js?v=4';
@@ -174,7 +174,7 @@ $('new-game').addEventListener('click',()=>{if(!confirm('重新开始会替换�
 document.querySelectorAll('[data-view]').forEach(button=>button.addEventListener('click',()=>{view=button.dataset.view;render();}));
 
 restoreLocal();render();updateMotion();
-if(new URLSearchParams(location.search).has('qa'))Object.defineProperty(window,'__shanhe',{value:{getState:()=>JSON.parse(JSON.stringify(state)),dispatch,openNpc,view:name=>{view=name;renderView();},getMotionTime:()=>backgroundMotion.getTime()},writable:false});
+if(new URLSearchParams(location.search).has('qa'))Object.defineProperty(window,'__shanhe',{value:{getState:()=>JSON.parse(JSON.stringify(state)),dispatch,openNpc,view:name=>{view=name;renderView();},getMotionTime:()=>backgroundMotion.getTime(),inspectBackgroundAt:t=>backgroundMotion.inspectPose(t)},writable:false});
 
 // Game HUD lives over the scene; the journal opens only on request.
 const panel=$('management-panel'),scrim=$('panel-scrim');
