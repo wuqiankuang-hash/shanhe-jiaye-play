@@ -1,0 +1,19 @@
+/* Load after the game shell. Percent actor positions refer to the native painting. */
+.scene.camera-scene{background:#233c34;touch-action:none;user-select:none;overscroll-behavior:none}
+.camera-scene .scene-surface{position:absolute;left:0;top:0;width:1672px;height:941px;transform-origin:0 0;isolation:isolate;will-change:transform;z-index:0}
+.camera-scene .scene-surface .scene-background{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;object-position:center;animation:none!important;transform:none;z-index:0;pointer-events:none;-webkit-user-drag:none}
+.camera-scene .scene-surface .scene-wash{z-index:1}
+.camera-scene .scene-surface .scene-water{z-index:2}
+.camera-scene .scene-surface canvas{z-index:2}
+.camera-scene .scene-surface .npc-layer{position:absolute;inset:0;z-index:3;pointer-events:none}
+.camera-scene .scene-surface .npc{left:var(--x);top:var(--y);min-height:0;min-width:0;transform:translate(-50%,-100%);pointer-events:auto;touch-action:none}
+.camera-scene .scene-surface .work-actor{width:206px;height:auto;margin:0;flex:none}
+.camera-scene .scene-surface .npc-name{position:absolute;top:100%;left:50%;transform:translateX(-50%) scale(var(--camera-label-scale,1));transform-origin:50% 0;font-size:11px;line-height:1.3;margin:0;padding:4px 8px}
+.camera-scene .scene-surface .npc-activity{position:absolute;top:calc(100% + 28px * var(--camera-label-scale,1));left:50%;transform:translateX(-50%) scale(var(--camera-label-scale,1));transform-origin:50% 0;font-size:9px;line-height:1.5;margin:0;white-space:nowrap}
+.camera-scene .scene-surface .npc::before{bottom:0}
+.camera-scene.camera-dragging,.camera-scene.camera-dragging .npc{cursor:grabbing}
+.camera-scene>.scene-heading,.camera-scene>.scene-tip{z-index:4}
+.camera-reset{position:absolute;z-index:6;right:20px;bottom:165px;min-width:44px;min-height:44px;color:#fff4dc;background:#233c34b8;border:1px solid #e4d4b066;border-radius:50%;font-size:22px}
+body.reduced-motion .scene-surface *,body.reduced-motion .scene-surface *::before{animation:none!important}
+@media(prefers-reduced-motion:reduce){.scene-surface *,.scene-surface *::before{animation:none!important;transition:none!important}}
+.people-focus{position:absolute;left:18px;bottom:185px;z-index:6;display:flex;gap:8px}.people-focus[hidden]{display:none}.people-focus button{font:12px var(--serif);color:#fff6df;border:1px solid #e2d9bd66;background:#304b3c88;min-height:36px;padding:5px 10px;border-radius:18px}

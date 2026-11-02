@@ -8,7 +8,9 @@
   <title>山河家业 · 青岚经营记</title>
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css?v=2">
-  <link rel="stylesheet" href="game-shell.css?v=2">
+  <link rel="stylesheet" href="game-shell.css?v=4">
+  <link rel="stylesheet" href="scene-camera.css?v=4">
+  <link rel="stylesheet" href="work-sprites.css?v=4">
 </head>
 <body>
   <header class="masthead">
@@ -18,13 +20,13 @@
   <main class="game-layout" id="game">
     <section class="world-column" aria-label="动态地点画面">
       <div class="scene" id="scene">
-        <img class="scene-background" id="scene-image" alt="青岚村的山水生活" src="assets/home.jpg" fetchpriority="high">
+        <img class="scene-background" id="scene-image" alt="青岚村的山水生活" src="assets/home-v2.jpg" fetchpriority="high">
         <div class="scene-wash" aria-hidden="true"></div>
         <div class="scene-water" aria-hidden="true"></div>
         <canvas id="scene-motion" aria-hidden="true"></canvas>
         <div class="scene-heading"><span class="eyebrow" id="scene-region">青岚山下</span><h1 id="scene-title">家中小院</h1><span class="scene-weather" id="scene-weather">春日 · 晴</span></div>
         <div class="npc-layer" id="npc-layer"></div>
-        <span class="scene-tip">轻点人物，聊聊生意与日常</span>
+        <span class="scene-tip">点人物交谈 · 拖动画面 · 双指缩放</span>
         <span class="motion-label" aria-label="动态场景"><i></i>山间日常</span>
       </div>
       <nav class="location-nav" id="locations" aria-label="前往不同地点"></nav>
@@ -61,6 +63,6 @@
     <button class="danger-button" id="new-game">重新开始一段生活</button>
   </dialog>
   <noscript><p class="noscript">请启用浏览器 JavaScript，才能开始经营与保存进度。</p></noscript>
-  <script type="module" src="app.js?v=2"></script>
+  <script type="module" src="app.js?v=4"></script>
 </body>
 </html>

@@ -1,0 +1,5 @@
+/* Native four-by-two atlas. Only the displayed frame changes, not body geometry. */
+.scene.camera-scene .scene-surface .sprite-actor{width:240px;aspect-ratio:418/472;height:auto;background-size:400% 200%;background-repeat:no-repeat;background-position:0 0;animation:painted-work var(--work-duration,2400ms) step-end infinite;filter:drop-shadow(0 3px 2px #223d232b);transform:none;margin-bottom:-12px;position:relative;left:24px}
+@keyframes painted-work{0%{background-position:0 0}12.5%{background-position:33.333333% 0}25%{background-position:66.666667% 0}37.5%{background-position:100% 0}50%{background-position:0 100%}62.5%{background-position:33.333333% 100%}75%{background-position:66.666667% 100%}87.5%{background-position:100% 100%}}
+body.reduced-motion .sprite-actor{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){.sprite-actor{animation-play-state:paused!important}}
