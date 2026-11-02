@@ -1,0 +1,16 @@
+{
+  "atlases": [
+    {
+      "columns": 8,
+      "count": 64,
+      "rows": 8,
+      "start": 0,
+      "url": "broker-motion-v3.webp"
+    }
+  ],
+  "duration": 2800,
+  "frameHeight": 288,
+  "frameWidth": 256,
+  "method": "offline RIFE-v4.6; dual-matte alpha; first64 of72 for9 source loop frames",
+  "totalFrames": 64
+}

@@ -1,3 +1,4 @@
+import {attachWorkMotion} from './work-motion.js?v=6';
 // Each occupation uses a transparent eight-frame painted work cycle.
 // Frame order and timing are shared by all scenes; no SVG puppet distortion.
 const work={
@@ -11,5 +12,6 @@ export function createWorkActor(id){
  actor.dataset.work=type;actor.activityLabel=task.label;actor.setAttribute('aria-hidden','true');
  actor.style.backgroundImage=`url(assets/work/${type}-v2.webp)`;
  actor.style.setProperty('--work-duration',task.duration+'ms');
+ attachWorkMotion(actor,{type,duration:task.duration});
  return actor;
 }
