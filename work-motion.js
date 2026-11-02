@@ -1,148 +1,146 @@
-// Playback only: every displayed pose was generated offline. The browser never
-// estimates motion, warps the character, or changes cycle speed.
-// Stationary work uses one planted shoe/ankle layer; tools remain animated.
-const actors=new Set(),assets=new Map();
-let raf=0,lastTick=0;
-const motionPreference=matchMedia('(prefers-reduced-motion: reduce)');
-const reduced=()=>motionPreference.matches||document.body.classList.contains('reduced-motion');
-const wake=()=>{if(!raf&&!document.hidden&&actors.size)raf=requestAnimationFrame(tick);};
-const observer=new IntersectionObserver(entries=>{
- for(const entry of entries){for(const state of actors)if(state.actor===entry.target){state.visible=entry.isIntersecting;if(!entry.isIntersecting)state.actor.dataset.motionState='offscreen';break;}}
- wake();
+// Motion is baked into small animated WebPs. Native image playback keeps frame
+// decoding and compositing out of the JavaScript scene-switching path.
+const actors = new Set(), metadata = new Map(), byActor = new WeakMap();
+const preference = matchMedia('(prefers-reduced-motion: reduce)');
+let watching = false;
+const imageStyle = 'position:relative;inset:auto;display:block;width:100%;height:100%;max-width:none;max-height:none;object-fit:contain;animation:none;transform:none;pointer-events:none;z-index:auto;';
+const reduced = () => preference.matches || document.body?.classList.contains('reduced-motion');
+const observer = new IntersectionObserver(entries => {
+ for (const entry of entries) { const state = byActor.get(entry.target); if (state) state.visible = entry.isIntersecting; }
+ refresh();
 });
-const mutations=new MutationObserver(()=>{
- for(const state of actors){if(state.actor.isConnected)state.connected=true;else if(state.connected)dispose(state);}
- wake();
+// Only removal records matter. Attribute updates during motion never trigger a
+// document-wide actor scan, and observers/listeners stop with the last actor.
+const removals = new MutationObserver(records => {
+ const removed = records.flatMap(record => [...record.removedNodes]);
+ for (const state of actors) if (!state.actor.isConnected && removed.some(node => node === state.actor || node.contains?.(state.actor))) dispose(state);
 });
-mutations.observe(document.documentElement,{childList:true,subtree:true,attributes:true,attributeFilter:['class']});
-function pauseClock(){lastTick=0;wake();}
-document.addEventListener('visibilitychange',pauseClock);
-motionPreference.addEventListener('change',pauseClock);
-
-async function loadImage(url){const image=new Image();image.src=url;await image.decode();return image;}
-function assetUrl(url,manifest){
- // Both a manifest-relative filename and the site's existing assets/... form
- // are accepted. Absolute URLs remain absolute.
- return new URL(url,url.startsWith('assets/')?document.baseURI:manifest).href;
+const classes = new MutationObserver(() => refresh());
+function watch() {
+ if (watching) return;
+ watching = true;
+ removals.observe(document.documentElement, {childList:true, subtree:true});
+ if (document.body) classes.observe(document.body, {attributes:true, attributeFilter:['class']});
+ document.addEventListener('visibilitychange', refresh);
+ preference.addEventListener('change', refresh);
 }
-function validateMetadata(meta){
- const integer=value=>Number.isInteger(value)&&value>0;
- if(!integer(meta.frameWidth)||!integer(meta.frameHeight)||!integer(meta.totalFrames)||meta.totalFrames>256||!Array.isArray(meta.atlases)||!meta.atlases.length||meta.atlases.length>16)throw new Error('invalid motion metadata');
- const covered=new Uint8Array(meta.totalFrames);
- for(const atlas of meta.atlases){
-  if(typeof atlas.url!=='string'||!integer(atlas.columns)||!integer(atlas.rows)||!Number.isInteger(atlas.start)||atlas.start<0||!integer(atlas.count)||atlas.count>atlas.columns*atlas.rows||atlas.start+atlas.count>meta.totalFrames)throw new Error('invalid motion atlas');
-  for(let n=atlas.start;n<atlas.start+atlas.count;n++){if(covered[n])throw new Error('overlapping motion atlas');covered[n]=1;}
+function unwatch() {
+ if (actors.size || !watching) return;
+ watching = false; removals.disconnect(); classes.disconnect();
+ document.removeEventListener('visibilitychange', refresh);
+ preference.removeEventListener('change', refresh);
+}
+function assetUrl(value, manifest) { return new URL(value, manifest).href; }
+function loadMetadata(manifest) {
+ if (metadata.has(manifest)) {
+  const hit = metadata.get(manifest); metadata.delete(manifest); metadata.set(manifest, hit); return hit;
  }
- if(covered.some(value=>!value))throw new Error('incomplete motion sequence');
+ const pending = fetch(manifest, {cache:'force-cache'}).then(async response => {
+  if (!response.ok) throw new Error('motion metadata HTTP ' + response.status);
+  const meta = await response.json();
+  if (typeof meta.animated !== 'string' || !meta.animated || typeof meta.poster !== 'string' || !meta.poster || meta.planted !== true || meta.frames !== 64 || !Number.isFinite(meta.duration) || meta.duration <= 0) throw new Error('invalid native motion metadata');
+  return {...meta, animated:assetUrl(meta.animated, manifest), poster:assetUrl(meta.poster, manifest)};
+ });
+ metadata.set(manifest, pending);
+ while (metadata.size > 6) metadata.delete(metadata.keys().next().value);
+ pending.catch(() => { if (metadata.get(manifest) === pending) metadata.delete(manifest); });
+ return pending;
 }
-function loadAsset(manifest,fallback){
- const key=manifest+'|'+fallback;
- if(assets.has(key)){const hit=assets.get(key);assets.delete(key);assets.set(key,hit);return hit;}
- const pending=(async()=>{
-  let warning;
-  try{
-   const response=await fetch(manifest,{cache:'no-cache'});if(!response.ok)throw new Error('motion metadata HTTP '+response.status);
-   const meta=await response.json();validateMetadata(meta);
-   const atlases=await Promise.all(meta.atlases.map(async atlas=>{
-    const image=await loadImage(assetUrl(atlas.url,manifest));
-    if(image.naturalWidth!==atlas.columns*meta.frameWidth||image.naturalHeight!==atlas.rows*meta.frameHeight)throw new Error('motion atlas dimensions do not match metadata');
-    return {...atlas,image};
-   }));
-   return {...meta,atlases,mode:'precomputed-frames'};
-  }catch(error){warning=String(error);}
-  const image=await loadImage(fallback);
-  if(image.naturalWidth%4||image.naturalHeight%2)throw new Error('invalid original painted atlas');
-  return {frameWidth:image.naturalWidth/4,frameHeight:image.naturalHeight/2,totalFrames:8,atlases:[{image,columns:4,rows:2,start:0,count:8}],mode:'painted-8-fallback',warning};
- })();
- assets.set(key,pending);
- // Detached scenes release their canvases; at most two decoded sequences stay
- // cached. Current actors retain only the images they are actually displaying.
- while(assets.size>2)assets.delete(assets.keys().next().value);
- pending.catch(()=>{if(assets.get(key)===pending)assets.delete(key);});return pending;
+function makeImage() {
+ const image = new Image(); image.className = 'work-motion-image';
+ image.width = 256; image.height = 288; image.alt = ''; image.setAttribute('aria-hidden', 'true');
+ image.decoding = 'async'; image.style.cssText = imageStyle; return image;
 }
-function plantedFeet(asset){
- if(asset.plantedFeet)return asset.plantedFeet;
- const w=asset.frameWidth,h=asset.frameHeight;
- // The left 11–62% of each occupation cell contains the planted shoes;
- // right-hand tools, dirt, feed, stove and broom stay outside this mask.
- const x=Math.floor(w*.11),y=Math.floor(h*.82),width=Math.ceil(w*.51),height=h-y;
- const feather=Math.max(4,Math.round(h*.025));
- const patch=document.createElement('canvas');patch.width=width;patch.height=height;
- const p=patch.getContext('2d');
- const first=asset.atlases.find(a=>a.start===0);
- p.drawImage(first.image,0,0,w,h,-x,-y,w,h);
- const gradient=p.createLinearGradient(0,0,0,feather);gradient.addColorStop(0,'rgba(0,0,0,0)');gradient.addColorStop(1,'rgba(0,0,0,1)');
- p.globalCompositeOperation='destination-in';p.fillStyle=gradient;p.fillRect(0,0,width,height);
- return asset.plantedFeet={x,y,width,height,feather,patch};
+function installPoster(state) {
+ const image = makeImage(); state.image = image;
+ image.onload = () => {
+  if (!actors.has(state) || state.image !== image) return;
+  image.onload = image.onerror = null; state.actor.style.backgroundImage = 'none';
+ };
+ image.onerror = () => {
+  if (!actors.has(state) || state.image !== image) return;
+  image.onload = image.onerror = null; image.removeAttribute('src'); image.remove(); state.image = null;
+  state.actor.dataset.motionWarning = 'poster failed to load';
+ };
+ image.src = state.poster; state.actor.append(image);
 }
-function draw(state,frame){
- const {asset,ctx,canvas}=state;
- const atlas=asset.atlases.find(atlas=>frame>=atlas.start&&frame<atlas.start+atlas.count),local=frame-atlas.start;
- ctx.clearRect(0,0,canvas.width,canvas.height);
- ctx.drawImage(atlas.image,(local%atlas.columns)*asset.frameWidth,Math.floor(local/atlas.columns)*asset.frameHeight,asset.frameWidth,asset.frameHeight,0,0,canvas.width,canvas.height);
- const feet=plantedFeet(asset);
- // Erase the moving shoes before adding the fixed layer. A narrow ankle blend
- // connects the moving trousers without leaving a second pair of feet behind.
- ctx.save();ctx.globalCompositeOperation='destination-out';
- const ankle=ctx.createLinearGradient(0,feet.y,0,feet.y+feet.feather);ankle.addColorStop(0,'rgba(0,0,0,0)');ankle.addColorStop(1,'rgba(0,0,0,1)');
- ctx.fillStyle=ankle;ctx.fillRect(feet.x,feet.y,feet.width,feet.height);ctx.restore();
- ctx.drawImage(feet.patch,feet.x,feet.y);
- state.actor.dataset.footLock='planted';
- state.frame=frame;state.actor.dataset.motionFrame=String(frame);state.actor.dataset.motionRenderCount=String(++state.count);
+function cancelPending(state) {
+ clearTimeout(state.timer); state.timer = null;
+ if (state.idle != null) { cancelIdleCallback(state.idle); state.idle = null; }
+ if (state.pending) { state.pending.onload = state.pending.onerror = null; state.pending.removeAttribute('src'); state.pending = null; }
 }
-function ready(state,asset){
- const canvas=document.createElement('canvas');canvas.className='work-motion-canvas';
- // Preserve complete native frame boundaries, aspect ratio and foot placement.
- canvas.width=asset.frameWidth;canvas.height=asset.frameHeight;canvas.setAttribute('aria-hidden','true');
- canvas.style.cssText='position:relative;inset:auto;display:block;width:100%;height:100%;pointer-events:none;z-index:auto;';
- const ctx=canvas.getContext('2d',{alpha:true});if(!ctx)throw new Error('canvas unavailable');
- state.asset=asset;state.canvas=canvas;state.ctx=ctx;
- state.duration=state.requestedDuration||(Number.isFinite(asset.duration)&&asset.duration>0?asset.duration:2800);
- state.actor.append(canvas);state.actor.style.backgroundImage='none';
- state.actor.dataset.motionMode=asset.mode;state.actor.dataset.motionTotalFrames=String(asset.totalFrames);
- state.actor.dataset.motionDuration=String(state.duration);state.actor.dataset.motionSourceFps=(asset.totalFrames*1000/state.duration).toFixed(2);
- if(asset.warning)state.actor.dataset.motionWarning=asset.warning;
- draw(state,0);state.actor.dataset.motionReady='true';wake();
+function poster(state, reason) {
+ cancelPending(state);
+ // Replacing the source releases the inactive animated image, including when
+ // the tab is hidden. Merely hiding an animated image would keep decoding it.
+ if (state.image && state.image.getAttribute('src') !== state.poster) state.image.src = state.poster;
+ state.playing = false; state.actor.dataset.motionState = reason;
 }
-function dispose(state){
- actors.delete(state);observer.unobserve(state.actor);state.canvas?.remove();
- // Clear actor-owned decoded-image and canvas references immediately.
- state.asset=null;state.ctx=null;state.canvas=null;state.actor.dataset.motionState='disposed';
- if(!actors.size){lastTick=0;}
+function fail(state, error) {
+ state.failed = true; poster(state, 'static-error');
+ state.actor.dataset.motionMode = 'static-poster'; state.actor.dataset.motionWarning = String(error);
+ refresh();
 }
-function tick(now){
- raf=0;
- if(document.hidden){lastTick=0;for(const state of actors)state.actor.dataset.motionState='hidden';return;}
- if(lastTick&&now-lastTick<1000/30-1){wake();return;}
- const dt=lastTick?now-lastTick:0;lastTick=now;
- const isReduced=reduced();let running=0,needsNext=false;
- for(const state of actors){
-  if(state.actor.isConnected)state.connected=true;else {if(state.connected)dispose(state);continue;}
-  if(!state.asset)continue;
-  if(isReduced){
-   state.actor.dataset.motionState='reduced';state.elapsed=0;state.actor.dataset.motionPhase='0';
-   if(state.frame!==0)draw(state,0);continue;
-  }
-  if(!state.visible){state.actor.dataset.motionState='offscreen';continue;}
-  if(running>=2){state.actor.dataset.motionState='paused';continue;}
-  running++;needsNext=true;state.actor.dataset.motionState='running';
-  state.elapsed=(state.elapsed+dt)%state.duration;
-  const phase=state.elapsed/state.duration,frame=Math.min(state.asset.totalFrames-1,Math.floor(phase*state.asset.totalFrames));
-  state.actor.dataset.motionPhase=phase.toFixed(5);
-  // Eight-painting fallback keeps its real original timing, never pretending to
-  // be an interpolated 30 fps sequence. Precomputed playback samples at 30 fps.
-  if(state.asset.mode==='precomputed-frames'||frame!==state.frame)draw(state,frame);
+function start(state) {
+ if (state.playing || state.timer != null || state.idle != null || state.pending || !state.asset) return;
+ state.actor.dataset.motionState = 'deferred';
+ // Scene insertion and paint get a quiet interval before native decoding starts.
+ state.timer = setTimeout(() => {
+  state.timer = null;
+  const begin = () => {
+   state.idle = null;
+   if (!actors.has(state) || !state.allowed || !state.actor.isConnected) return;
+   const image = makeImage(); state.pending = image;
+   image.onload = () => {
+    if (!actors.has(state) || state.pending !== image || !state.allowed) return;
+    image.onload = image.onerror = null; state.pending = null;
+    if (state.image) { state.image.onload = state.image.onerror = null; state.image.removeAttribute('src'); state.image.remove(); }
+    state.image = image; state.actor.append(image);
+    state.actor.style.backgroundImage = 'none'; state.playing = true;
+    state.actor.dataset.motionReady = 'true'; state.actor.dataset.motionState = 'running';
+   };
+   image.onerror = () => { if (actors.has(state) && state.pending === image) fail(state, 'animated WebP failed to load'); };
+   image.src = state.asset.animated;
+  };
+  if (typeof requestIdleCallback === 'function') state.idle = requestIdleCallback(begin, {timeout:300}); else begin();
+ }, 120);
+}
+function refresh() {
+ let active = 0;
+ for (const state of actors) {
+  const reason = state.failed ? 'static-error' : document.hidden ? 'hidden' : reduced() ? 'reduced' : !state.visible ? 'offscreen' : active >= 2 ? 'paused' : null;
+  state.allowed = !reason;
+  if (reason) poster(state, reason);
+  else { active++; start(state); }
  }
- if(needsNext)wake();else lastTick=0;
 }
-export function attachWorkMotion(actor,{type,duration,url}={}){
- const manifest=new URL(url&&/\.json(?:[?#]|$)/i.test(url)?url:`assets/work/${type}-motion-v3.json`,document.baseURI).href;
- const fallback=new URL(url&&!/\.json(?:[?#]|$)/i.test(url)?url:`assets/work/${type}-v2.webp`,document.baseURI).href;
- const state={actor,connected:actor.isConnected,visible:true,requestedDuration:Number.isFinite(duration)&&duration>0?duration:null,duration:2800,elapsed:0,count:0,frame:0,asset:null};
- actors.add(state);observer.observe(actor);
- actor.dataset.motionMode='loading';actor.dataset.motionReady='false';actor.dataset.motionState='loading';
- actor.dataset.motionPhase='0';actor.dataset.motionFrame='0';actor.dataset.motionRenderCount='0';
- actor.style.animation='none';actor.style.backgroundPosition='0% 0%';
- loadAsset(manifest,fallback).then(asset=>{if(!actors.has(state))return;try{ready(state,asset);}catch(error){actor.dataset.motionMode='static-error';actor.dataset.motionWarning=String(error);}}).catch(error=>{if(!actors.has(state))return;actor.dataset.motionMode='static-load-error';actor.dataset.motionWarning=String(error);});
- wake();return ()=>dispose(state);
+function dispose(state) {
+ if (!actors.delete(state)) return;
+ observer.unobserve(state.actor); byActor.delete(state.actor); cancelPending(state);
+ if (state.image) { state.image.onload = state.image.onerror = null; state.image.removeAttribute('src'); state.image.remove(); state.image = null; }
+ state.asset = null; state.actor.dataset.motionState = 'disposed';
+ unwatch(); refresh();
+}
+export function attachWorkMotion(actor, {type, duration, url} = {}) {
+ const previous = byActor.get(actor); if (previous) dispose(previous);
+ const manifest = new URL(url && /\.json(?:[?#]|$)/i.test(url) ? url : `assets/work/${type}-motion-v4.json`, document.baseURI).href;
+ const state = {actor, visible:true, allowed:false, failed:false, playing:false, timer:null, idle:null, pending:null, image:null, asset:null, poster:assetUrl(`${type}-poster-v4.webp`, manifest)};
+ actors.add(state); byActor.set(actor, state); watch(); observer.observe(actor);
+ actor.style.animation = 'none'; actor.style.backgroundPosition = '0% 0%';
+ actor.dataset.motionMode = 'native-animated-webp'; actor.dataset.motionReady = 'false';
+ actor.dataset.motionTotalFrames = '64'; actor.dataset.totalFrames = '64'; actor.dataset.footLock = 'planted-baked'; actor.dataset.motionState = 'loading';
+ // Native frame position is unknown; remove counters left by the old runtime.
+ for (const key of ['motionFrame','motionRenderCount','motionPhase','motionSourceFps']) delete actor.dataset[key];
+ delete actor.dataset.motionWarning;
+ installPoster(state);
+ loadMetadata(manifest).then(asset => {
+  if (!actors.has(state)) return;
+  state.asset = asset; state.poster = asset.poster;
+  if (!state.image) installPoster(state);
+  else if (!state.playing) state.image.src = state.poster;
+  // The encoded file defines playback duration; caller timing cannot retime it.
+  actor.dataset.motionDuration = String(asset.duration);
+  refresh();
+ }).catch(error => { if (actors.has(state)) fail(state, error); });
+ refresh(); return () => dispose(state);
 }

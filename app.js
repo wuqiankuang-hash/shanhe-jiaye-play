@@ -1,6 +1,7 @@
+import {createSceneAssets} from './scene-assets.js?v=8';
 import {createSceneCamera} from './scene-camera.js?v=4';
 import {createMapScreen} from './map-screen.js';
-import {createWorkActor} from './work-actors.js?v=7';
+import {createWorkActor} from './work-actors.js?v=8';
 import {newGame,reduce,getActions,validate,exportSave,importSave,businessCatalog,itemCatalog,locationCatalog,skillLabels,priceCatalog,quoteSale,dailyAccounts,season,timeLabel} from './engine.js';
 
 const SAVE_KEY='shanhe-jiaye-text-v1';
@@ -12,13 +13,14 @@ const storageGet=key=>{try{return localStorage.getItem(key);}catch{return null;}
 let state=newGame(),view='business',currentNpc=null,ledgerDay=1,storageFailed=false,toastTimer;
 let motionReduced=storageGet(MOTION_KEY)==='reduced'||(storageGet(MOTION_KEY)!=='full'&&matchMedia('(prefers-reduced-motion: reduce)').matches);
 let lastLocation='',lastSavedAt='',sceneCamera=null;
+const sceneAssets=createSceneAssets();let sceneRequest=0;
 
 const sceneCatalog={
-  home:{image:'assets/home-v2.jpg',region:'青岚村 · 自家小院',title:'柴门小院',heading:'一餐一饭，也是一门经营',description:'在小院里歇歇脚，看看行囊，也盘算下一轮生意。养足精神，明日才有力气做活。',people:[['npc-neighbor',50,77]]},
-  village:{image:'assets/village-v2.jpg',region:'青岚村 · 山村巷口',title:'井边人家',heading:'乡里有熟人，营生有门路',description:'村里只有这一家小卖部。买齐种苗和食材，再找管事谈场地；有本钱，也要先有手艺。',people:[['npc-shop',35,77],['npc-broker',68,76]]},
-  field:{image:'assets/field-v2.jpg',region:'青岚村 · 山间梯田',title:'一畦春绿',heading:'收成从下地学艺开始',description:'播种要菜种，养护要水，田租每日照付。做过农活、摸清时节，才好租下自己的菜田。',people:[['npc-farmer',48,76]]},
-  pond:{image:'assets/pond-v2.jpg',region:'青岚村 · 溪边鱼塘',title:'半塘青波',heading:'一塘鱼苗，日日都要照料',description:'学看水、学喂料，再盘下一口小塘。生长期每天都吃饲料，本领和照料决定有多少鱼能长成。',people:[['npc-fisher',48,70]]},
-  market:{image:'assets/market-v2.jpg',region:'村外集镇 · 早市长街',title:'人间烟火',heading:'一碗热面，要算清一笔账',description:'从面馆帮工学起，做自己的面摊。真材实料做面，按客流定价，再把赚来的钱落到账上。',people:[['npc-cook',55,76]]},
+  home:{image:'assets/home-v3.webp',region:'青岚村 · 自家小院',title:'柴门小院',heading:'一餐一饭，也是一门经营',description:'在小院里歇歇脚，看看行囊，也盘算下一轮生意。养足精神，明日才有力气做活。',people:[['npc-neighbor',50,77]]},
+  village:{image:'assets/village-v3.webp',region:'青岚村 · 山村巷口',title:'井边人家',heading:'乡里有熟人，营生有门路',description:'村里只有这一家小卖部。买齐种苗和食材，再找管事谈场地；有本钱，也要先有手艺。',people:[['npc-shop',35,77],['npc-broker',68,76]]},
+  field:{image:'assets/field-v3.webp',region:'青岚村 · 山间梯田',title:'一畦春绿',heading:'收成从下地学艺开始',description:'播种要菜种，养护要水，田租每日照付。做过农活、摸清时节，才好租下自己的菜田。',people:[['npc-farmer',48,76]]},
+  pond:{image:'assets/pond-v3.webp',region:'青岚村 · 溪边鱼塘',title:'半塘青波',heading:'一塘鱼苗，日日都要照料',description:'学看水、学喂料，再盘下一口小塘。生长期每天都吃饲料，本领和照料决定有多少鱼能长成。',people:[['npc-fisher',48,70]]},
+  market:{image:'assets/market-v3.webp',region:'村外集镇 · 早市长街',title:'人间烟火',heading:'一碗热面，要算清一笔账',description:'从面馆帮工学起，做自己的面摊。真材实料做面，按客流定价，再把赚来的钱落到账上。',people:[['npc-cook',55,76]]},
 };
 const npcs={
   'npc-farmer':{name:'周伯',role:'农师 · 种植手艺',image:'assets/work/farmer-portrait-v2.webp',location:'field',speech:s=>s.businesses.farm?'田是租下来了，种子和水可别忘了。等上两天，收菜、卖菜，再看看扣掉田租到底剩了多少。':'先随我下地，把播种养护亲手做一遍。做活有工钱，也能长本领；等种植到了20，再去谈自己的田。'},
@@ -67,7 +69,7 @@ function render(){
   $('scene').dataset.location=state.location;$('scene').dataset.period=getPeriod();
   const shade=getPeriod()==='夜色'?'brightness(.60) saturate(.8)':getPeriod()==='暮色'?'sepia(.18) brightness(.88)':'none';
   $('scene-image').style.filter=shade;
-  if(lastLocation!==state.location){lastLocation=state.location;$('scene-image').src=scene.image;$('scene-image').alt=scene.region+'的水墨场景';renderPeople(scene);renderPeopleFocus(scene);const focus=scene.people[0];sceneCamera?.focus(focus[1],focus[2]);}
+  if(lastLocation!==state.location){lastLocation=state.location;presentScene(state.location,scene);}
   renderLocations();renderStatus();renderView();renderEvents();
   document.querySelectorAll('[data-view]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.view===view)));
   if(currentNpc)renderConversation();
@@ -218,3 +220,19 @@ function renderPeopleFocus(scene){
  for(const [id,x,y] of scene.people){const b=make('button','',npcs[id].name);b.type='button';b.addEventListener('click',()=>sceneCamera?.focus(x,y));nav.append(b);}
 }
 renderPeopleFocus(sceneCatalog[state.location]);
+
+async function presentScene(id,scene){
+ const request=++sceneRequest,stage=$('scene');stage.classList.add('scene-loading');
+ let status=$('scene-load-status');if(!status){status=make('span','scene-load-status');status.id='scene-load-status';status.setAttribute('role','status');stage.append(status);}
+ status.textContent='正在前往'+locationCatalog[id].name+'…';
+ const start=performance.now();
+ try{
+  let asset;try{asset=await sceneAssets.load(scene.image);}catch{asset=await sceneAssets.load(scene.image.replace('-v3.webp','-v2.jpg'));}
+  if(request!==sceneRequest)return;
+  $('scene-image').src=asset.url;$('scene-image').alt=scene.region+'的水墨场景';
+  renderPeople(scene);renderPeopleFocus(scene);const focus=scene.people[0];sceneCamera?.focus(focus[1],focus[2]);
+  stage.dataset.location=id;stage.dataset.sceneReady=id;stage.dataset.sceneLoadMs=(performance.now()-start).toFixed(1);
+  stage.classList.remove('scene-loading');status.textContent='';
+  sceneAssets.warm(Object.values(sceneCatalog).map(s=>s.image));
+ }catch{if(request===sceneRequest){lastLocation='';status.textContent='场景暂未加载，请重新点地点重试';stage.classList.remove('scene-loading');}}
+}
