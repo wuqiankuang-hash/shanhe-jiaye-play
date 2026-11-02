@@ -17,3 +17,7 @@
 body.reduced-motion .scene-surface *,body.reduced-motion .scene-surface *::before{animation:none!important}
 @media(prefers-reduced-motion:reduce){.scene-surface *,.scene-surface *::before{animation:none!important;transition:none!important}}
 .people-focus{position:absolute;left:18px;bottom:185px;z-index:6;display:flex;gap:8px}.people-focus[hidden]{display:none}.people-focus button{font:12px var(--serif);color:#fff6df;border:1px solid #e2d9bd66;background:#304b3c88;min-height:36px;padding:5px 10px;border-radius:18px}
+
+/* Effects use the same painting coordinates and cannot intercept scene touches. */
+.camera-scene .scene-surface #scene-motion{position:absolute;inset:0;width:1672px;height:941px;pointer-events:none;opacity:1}
+.camera-scene .scene-surface .scene-water{display:none}

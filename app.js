@@ -1,3 +1,4 @@
+import {createBackgroundMotion} from './background-motion.js?v=12';
 import {hudIcon} from './hud-icons.js?v=11';
 import {createSceneAssets} from './scene-assets.js?v=8';
 import {createSceneCamera} from './scene-camera.js?v=4';
@@ -163,29 +164,17 @@ function exportFile(){try{const text=exportSave(state),blob=new Blob([text],{typ
 async function importFile(event){const file=event.target.files?.[0];if(!file)return;if(file.size>1000000){$('setting-message').textContent='文件过大，无法作为游戏存档读取。';event.target.value='';return;}try{const result=importSave(await file.text());if(!result.ok){$('setting-message').textContent=result.message;return;}if(!confirm('导入会替换当前进度，继续吗？'))return;state=result.state;ledgerDay=state.day;lastLocation='';persist();render();$('setting-message').textContent='存档已导入，地点、手艺和收支均已恢复。';}catch{$('setting-message').textContent='无法读取这个文件，原进度未变。';}finally{event.target.value='';}}
 
 // Ambient scene animation is independent of turn-based business time.
-const canvas=$('scene-motion'),ctx=canvas.getContext('2d');let animationFrame=0,lastFrame=0,w=1,h=1,elapsed=0;
-const leaves=Array.from({length:15},(_,i)=>({x:(i*73%101)/100,y:(i*37%97)/100,s:1+(i%3)*.6,phase:i*.9}));
-function resizeMotion(){const dpr=Math.min(devicePixelRatio||1,2);w=canvas.clientWidth;h=canvas.clientHeight;canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);}
-function frame(now){animationFrame=0;if(motionReduced||document.hidden)return;if(now-lastFrame<33){animationFrame=requestAnimationFrame(frame);return;}const dt=Math.min(.08,(now-lastFrame)/1000||.033);lastFrame=now;elapsed+=dt;ctx.clearRect(0,0,w,h);
-  for(const leaf of leaves){leaf.x+=dt*.014;leaf.y+=dt*.015;if(leaf.x>1.03){leaf.x=-.03;leaf.y=(leaf.phase*.17)%1;}if(leaf.y>1.03)leaf.y=-.03;const x=leaf.x*w+Math.sin(elapsed*.7+leaf.phase)*8,y=leaf.y*h;ctx.save();ctx.translate(x,y);ctx.rotate(elapsed*.3+leaf.phase);ctx.fillStyle=season(state)==='秋'?'rgba(171,132,64,.46)':'rgba(229,185,172,.56)';ctx.beginPath();ctx.ellipse(0,0,leaf.s*2,leaf.s*.8,0,0,Math.PI*2);ctx.fill();ctx.restore();}
-  if(state.location==='pond'){
-    for(let i=0;i<5;i++){const progress=(elapsed*.16+i*.21)%1,x=w*(state.location==='pond'?.56+(i%3)*.11:.65+(i%2)*.07),y=h*(.63+(i%3)*.11);ctx.strokeStyle=`rgba(244,252,235,${(1-progress)*.28})`;ctx.lineWidth=.8;ctx.beginPath();ctx.ellipse(x,y,5+progress*24,1+progress*5,0,0,Math.PI*2);ctx.stroke();}
-  }
-  if(state.location==='market'){
-    for(let j=0;j<3;j++){ctx.beginPath();for(let i=0;i<18;i++){const t=i/17,x=w*.7+Math.sin(t*6+elapsed*.8+j)*5+j*4,y=h*.52-t*48;if(!i)ctx.moveTo(x,y);else ctx.lineTo(x,y);}ctx.strokeStyle=`rgba(255,252,236,${.12+j*.035})`;ctx.lineWidth=3;ctx.stroke();}
-  }
-  animationFrame=requestAnimationFrame(frame);
-}
-function updateMotion(){document.body.classList.toggle('reduced-motion',motionReduced);$('toggle-motion').textContent=motionReduced?'恢复画面动态':'减少画面动态';if(animationFrame){cancelAnimationFrame(animationFrame);animationFrame=0;}ctx.clearRect(0,0,w,h);if(!motionReduced&&!document.hidden){lastFrame=performance.now();animationFrame=requestAnimationFrame(frame);}}
+const backgroundMotion=createBackgroundMotion($('scene-motion'));
+function updateMotion(){document.body.classList.toggle('reduced-motion',motionReduced);$('toggle-motion').textContent=motionReduced?'恢复画面动态':'减少画面动态';backgroundMotion.setReduced(motionReduced);}
 
 $('close-conversation').addEventListener('click',closeConversation);$('leave-conversation').addEventListener('click',closeConversation);$('conversation').addEventListener('cancel',()=>{currentNpc=null;});
 $('settings-button').addEventListener('click',openSettings);$('close-settings').addEventListener('click',()=>$('settings').close());$('export-save').addEventListener('click',exportFile);$('import-save').addEventListener('change',importFile);
 $('toggle-motion').addEventListener('click',()=>{motionReduced=!motionReduced;try{localStorage.setItem(MOTION_KEY,motionReduced?'reduced':'full');}catch{}updateMotion();});
 $('new-game').addEventListener('click',()=>{if(!confirm('重新开始会替换当前进度。建议先导出存档，确定继续吗？'))return;state=newGame();view='business';ledgerDay=1;lastLocation='';persist();render();$('settings').close();notify('又是一个清晨，新的生活开始了。');});
 document.querySelectorAll('[data-view]').forEach(button=>button.addEventListener('click',()=>{view=button.dataset.view;render();}));
-new ResizeObserver(resizeMotion).observe($('scene-motion'));document.addEventListener('visibilitychange',updateMotion);
-restoreLocal();render();resizeMotion();updateMotion();
-if(new URLSearchParams(location.search).has('qa'))Object.defineProperty(window,'__shanhe',{value:{getState:()=>JSON.parse(JSON.stringify(state)),dispatch,openNpc,view:name=>{view=name;renderView();},getMotionTime:()=>elapsed},writable:false});
+
+restoreLocal();render();updateMotion();
+if(new URLSearchParams(location.search).has('qa'))Object.defineProperty(window,'__shanhe',{value:{getState:()=>JSON.parse(JSON.stringify(state)),dispatch,openNpc,view:name=>{view=name;renderView();},getMotionTime:()=>backgroundMotion.getTime()},writable:false});
 
 // Game HUD lives over the scene; the journal opens only on request.
 const panel=$('management-panel'),scrim=$('panel-scrim');
@@ -211,7 +200,7 @@ $('scene').prepend(sceneSurface);
 const initialFocus=sceneCatalog[state.location].people[0];
 sceneCamera=createSceneCamera({scene:$('scene'),surface:sceneSurface,focus:{x:initialFocus[1],y:initialFocus[2]}});
 const resetCamera=make('button','camera-reset','↺');resetCamera.type='button';resetCamera.setAttribute('aria-label','重置场景视角');resetCamera.addEventListener('click',()=>sceneCamera.reset());$('scene').append(resetCamera);
-$('scene').dataset.location=state.location;resizeMotion();
+$('scene').dataset.location=state.location;
 
 if(new URLSearchParams(location.search).has('qa'))Object.defineProperty(window,'__sceneCamera',{value:sceneCamera});
 
@@ -230,7 +219,7 @@ async function presentScene(id,scene){
  try{
   let asset;try{asset=await sceneAssets.load(scene.image);}catch{asset=await sceneAssets.load(scene.image.replace('-v3.webp','-v2.jpg'));}
   if(request!==sceneRequest)return;
-  $('scene-image').src=asset.url;$('scene-image').alt=scene.region+'的水墨场景';
+  backgroundMotion.setScene(id,asset.image);$('scene-image').src=asset.url;$('scene-image').alt=scene.region+'的水墨场景';
   renderPeople(scene);renderPeopleFocus(scene);const focus=scene.people[0];sceneCamera?.focus(focus[1],focus[2]);
   stage.dataset.location=id;stage.dataset.sceneReady=id;stage.dataset.sceneLoadMs=(performance.now()-start).toFixed(1);
   stage.classList.remove('scene-loading');status.textContent='';
