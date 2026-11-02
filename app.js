@@ -1,3 +1,4 @@
+import {hudIcon} from './hud-icons.js?v=11';
 import {createSceneAssets} from './scene-assets.js?v=8';
 import {createSceneCamera} from './scene-camera.js?v=4';
 import {createMapScreen} from './map-screen.js';
@@ -70,7 +71,7 @@ function render(){
   const shade=getPeriod()==='夜色'?'brightness(.60) saturate(.8)':getPeriod()==='暮色'?'sepia(.18) brightness(.88)':'none';
   $('scene-image').style.filter=shade;
   if(lastLocation!==state.location){lastLocation=state.location;presentScene(state.location,scene);}
-  renderLocations();renderStatus();renderView();renderEvents();
+  renderLocations();renderStatus();renderQuickItems();renderView();renderEvents();
   document.querySelectorAll('[data-view]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.view===view)));
   if(currentNpc)renderConversation();
 }
@@ -82,7 +83,7 @@ function renderPeople(scene){
 }
 function renderLocations(){
   $('locations').replaceChildren(...Object.keys(sceneCatalog).map(id=>{
-    const button=make('button','location-tab'+(state.location===id?' active':''));button.setAttribute('aria-current',state.location===id?'location':'false');button.dataset.location=id;button.append(make('span','loc-symbol',routeSymbols[id]),make('span','',routeNames[id]));button.addEventListener('click',()=>{if(state.location!==id)dispatch('travel:'+id);});return button;
+    const button=make('button','location-tab'+(state.location===id?' active':''));button.setAttribute('aria-current',state.location===id?'location':'false');button.dataset.location=id;button.setAttribute('aria-label',routeNames[id]);button.title=routeNames[id];button.innerHTML=hudIcon(id);button.addEventListener('click',()=>{if(state.location!==id)dispatch('travel:'+id);});return button;
   }));
 }
 function renderStatus(){
@@ -217,7 +218,7 @@ if(new URLSearchParams(location.search).has('qa'))Object.defineProperty(window,'
 function renderPeopleFocus(scene){
  let nav=$('people-focus');if(!nav){nav=make('div','people-focus');nav.id='people-focus';nav.dataset.cameraIgnore='';$('scene').append(nav);}
  nav.replaceChildren();nav.hidden=scene.people.length<2;
- for(const [id,x,y] of scene.people){const b=make('button','',npcs[id].name);b.type='button';b.addEventListener('click',()=>sceneCamera?.focus(x,y));nav.append(b);}
+ for(const [id,x,y] of scene.people){const b=make('button');b.innerHTML=hudIcon(id==='npc-shop'?'shop':'broker');b.title='找'+npcs[id].name;b.setAttribute('aria-label','找'+npcs[id].name);b.type='button';b.addEventListener('click',()=>sceneCamera?.focus(x,y));nav.append(b);}
 }
 renderPeopleFocus(sceneCatalog[state.location]);
 
@@ -236,3 +237,22 @@ async function presentScene(id,scene){
   sceneAssets.warm(Object.values(sceneCatalog).map(s=>s.image));
  }catch{if(request===sceneRequest){lastLocation='';status.textContent='场景暂未加载，请重新点地点重试';stage.classList.remove('scene-loading');}}
 }
+
+function renderQuickItems(){
+ const items=Object.entries(state.inventory).filter(([,n])=>n>0);
+ $('quick-items').replaceChildren(...items.map(([id,count])=>{
+  const item=itemCatalog[id],b=make('button','quick-item');b.type='button';b.dataset.item=id;b.setAttribute('aria-label',`${item.name}，${count}份`);
+  b.innerHTML=hudIcon(id);b.title=`${item.name} × ${count}`;b.append(make('b','quick-item-count',count));
+  b.addEventListener('click',()=>{
+   $('quick-item-title').textContent=`${item.name} × ${state.inventory[id]||0}`;
+   $('quick-item-description').textContent=item.description||'随身物资，可用于经营和日常生活。';
+   const food=getActions(state,'bag').filter(a=>a.id==='eat:'+id);
+   $('quick-item-actions').replaceChildren(...food.map(a=>{const button=actionButton(a);button.addEventListener('click',()=>{if(!button.disabled)$('quick-item-dialog').close();});return button;}));
+   $('quick-item-dialog').showModal();
+  });return b;
+ }));
+ if(!items.length)$('quick-items').append(make('span','quick-empty','暂无随身物品'));
+}
+$('close-quick-item').addEventListener('click',()=>$('quick-item-dialog').close());
+
+for(const button of document.querySelectorAll('.game-tools button'))button.title=button.getAttribute('aria-label')||button.textContent.trim();

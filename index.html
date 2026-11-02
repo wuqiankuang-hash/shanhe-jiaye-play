@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="game-shell.css?v=8">
   <link rel="stylesheet" href="scene-camera.css?v=4">
   <link rel="stylesheet" href="work-sprites.css?v=9">
+  <link rel="stylesheet" href="play-hud.css?v=11">
 </head>
 <body>
   <header class="masthead">
@@ -42,6 +43,8 @@
       <p class="version-note">经营测试版 · 本机独立存档 · 无需注册</p>
     </section>
   </main>
+  <section class="quick-inventory" aria-label="随身物品"><span class="quick-inventory-label">随身</span><div id="quick-items" class="quick-items"></div></section>
+  <dialog id="quick-item-dialog" class="quick-item-dialog"><button id="close-quick-item" class="dialog-close" aria-label="关闭物品">×</button><h2 id="quick-item-title"></h2><p id="quick-item-description"></p><div id="quick-item-actions" class="action-list"></div></dialog>
   <nav class="game-tools" aria-label="游戏手札"><button id="world-map-button" aria-label="打开世界地图"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 7l8-3 10 3 8-3v22l-8 3-10-3-8 3zM11 4v22M21 7v22"/></svg><span>舆图</span></button><button data-open-view="business">营生</button><button data-open-view="bag">行囊</button><button data-open-view="skills">手艺</button><button data-open-view="ledger">账簿</button></nav>
   <button id="panel-scrim" class="panel-scrim" aria-label="收起手札" hidden></button>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -63,6 +66,6 @@
     <button class="danger-button" id="new-game">重新开始一段生活</button>
   </dialog>
   <noscript><p class="noscript">请启用浏览器 JavaScript，才能开始经营与保存进度。</p></noscript>
-  <script type="module" src="app.js?v=9"></script>
+  <script type="module" src="app.js?v=11"></script>
 </body>
 </html>
