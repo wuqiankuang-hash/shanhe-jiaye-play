@@ -1,5 +1,6 @@
 // Playback only: every displayed pose was generated offline. The browser never
-// estimates motion, warps the character, blends poses, or changes cycle speed.
+// estimates motion, warps the character, or changes cycle speed.
+// Stationary work uses one planted shoe/ankle layer; tools remain animated.
 const actors=new Set(),assets=new Map();
 let raf=0,lastTick=0;
 const motionPreference=matchMedia('(prefers-reduced-motion: reduce)');
@@ -59,11 +60,34 @@ function loadAsset(manifest,fallback){
  while(assets.size>2)assets.delete(assets.keys().next().value);
  pending.catch(()=>{if(assets.get(key)===pending)assets.delete(key);});return pending;
 }
+function plantedFeet(asset){
+ if(asset.plantedFeet)return asset.plantedFeet;
+ const w=asset.frameWidth,h=asset.frameHeight;
+ // The left 11–62% of each occupation cell contains the planted shoes;
+ // right-hand tools, dirt, feed, stove and broom stay outside this mask.
+ const x=Math.floor(w*.11),y=Math.floor(h*.82),width=Math.ceil(w*.51),height=h-y;
+ const feather=Math.max(4,Math.round(h*.025));
+ const patch=document.createElement('canvas');patch.width=width;patch.height=height;
+ const p=patch.getContext('2d');
+ const first=asset.atlases.find(a=>a.start===0);
+ p.drawImage(first.image,0,0,w,h,-x,-y,w,h);
+ const gradient=p.createLinearGradient(0,0,0,feather);gradient.addColorStop(0,'rgba(0,0,0,0)');gradient.addColorStop(1,'rgba(0,0,0,1)');
+ p.globalCompositeOperation='destination-in';p.fillStyle=gradient;p.fillRect(0,0,width,height);
+ return asset.plantedFeet={x,y,width,height,feather,patch};
+}
 function draw(state,frame){
  const {asset,ctx,canvas}=state;
  const atlas=asset.atlases.find(atlas=>frame>=atlas.start&&frame<atlas.start+atlas.count),local=frame-atlas.start;
  ctx.clearRect(0,0,canvas.width,canvas.height);
  ctx.drawImage(atlas.image,(local%atlas.columns)*asset.frameWidth,Math.floor(local/atlas.columns)*asset.frameHeight,asset.frameWidth,asset.frameHeight,0,0,canvas.width,canvas.height);
+ const feet=plantedFeet(asset);
+ // Erase the moving shoes before adding the fixed layer. A narrow ankle blend
+ // connects the moving trousers without leaving a second pair of feet behind.
+ ctx.save();ctx.globalCompositeOperation='destination-out';
+ const ankle=ctx.createLinearGradient(0,feet.y,0,feet.y+feet.feather);ankle.addColorStop(0,'rgba(0,0,0,0)');ankle.addColorStop(1,'rgba(0,0,0,1)');
+ ctx.fillStyle=ankle;ctx.fillRect(feet.x,feet.y,feet.width,feet.height);ctx.restore();
+ ctx.drawImage(feet.patch,feet.x,feet.y);
+ state.actor.dataset.footLock='planted';
  state.frame=frame;state.actor.dataset.motionFrame=String(frame);state.actor.dataset.motionRenderCount=String(++state.count);
 }
 function ready(state,asset){

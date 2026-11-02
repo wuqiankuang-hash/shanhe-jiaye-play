@@ -3,3 +3,7 @@
 @keyframes painted-work{0%{background-position:0 0}12.5%{background-position:33.333333% 0}25%{background-position:66.666667% 0}37.5%{background-position:100% 0}50%{background-position:0 100%}62.5%{background-position:33.333333% 100%}75%{background-position:66.666667% 100%}87.5%{background-position:100% 100%}}
 body.reduced-motion .sprite-actor{animation-play-state:paused!important}
 @media(prefers-reduced-motion:reduce){.sprite-actor{animation-play-state:paused!important}}
+/* Planted work contacts: cast only a small ground shadow, not a floating outline. */
+.scene.camera-scene .scene-surface .sprite-actor{filter:none}
+.scene.camera-scene .scene-surface .npc::before{display:none}
+.sprite-actor::before{content:"";position:absolute;left:22%;bottom:3.4%;width:40%;height:3%;border-radius:50%;background:#26342338;filter:blur(2px);pointer-events:none}

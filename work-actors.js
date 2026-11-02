@@ -1,4 +1,4 @@
-import {attachWorkMotion} from './work-motion.js?v=6';
+import {attachWorkMotion} from './work-motion.js?v=7';
 // Each occupation uses a transparent eight-frame painted work cycle.
 // Frame order and timing are shared by all scenes; no SVG puppet distortion.
 const work={
