@@ -1,292 +1,422 @@
 {
- "bytes": 2504714,
+ "bytes": 2504714.0,
  "items": {
   "bamboo-leaves": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": true,
-   "opaquePixels": 13015,
+   "opaquePixels": 13015.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    262,
-    249
+    262.0,
+    249.0
    ],
-   "sourceCell": 1,
+   "sourceCell": 1.0,
    "sourceSheet": "nature-opaque",
    "url": "assets/environment-library-v1/bamboo-leaves.webp"
   },
   "bamboo-stalk": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 10010,
+   "opaquePixels": 10010.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    166,
-    309
+    166.0,
+    309.0
    ],
-   "sourceCell": 0,
+   "sourceCell": 0.0,
    "sourceSheet": "nature-opaque",
    "url": "assets/environment-library-v1/bamboo-stalk.webp"
   },
   "basket": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 35459,
+   "opaquePixels": 35459.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    200,
-    208
+    200.0,
+    208.0
    ],
-   "sourceCell": 13,
+   "sourceCell": 13.0,
    "sourceSheet": "home-props",
    "url": "assets/environment-library-v1/basket.webp"
   },
   "bean-stake": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 18586,
+   "opaquePixels": 18586.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    168,
-    295
+    168.0,
+    295.0
    ],
-   "sourceCell": 6,
+   "sourceCell": 6.0,
    "sourceSheet": "home-props",
    "url": "assets/environment-library-v1/bean-stake.webp"
   },
   "blind": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 34759,
+   "opaquePixels": 34759.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    230,
-    224
+    230.0,
+    224.0
    ],
-   "sourceCell": 6,
+   "sourceCell": 6.0,
    "sourceSheet": "architecture",
    "url": "assets/environment-library-v1/blind.webp"
   },
   "boulder": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 55073,
+   "opaquePixels": 55073.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    252,
-    288
+    252.0,
+    288.0
    ],
-   "sourceCell": 13,
+   "sourceCell": 13.0,
    "sourceSheet": "nature-opaque",
    "url": "assets/environment-library-v1/boulder.webp"
   },
   "bridge-deck": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 22718,
+   "opaquePixels": 22718.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    293,
-    160
+    293.0,
+    160.0
    ],
-   "sourceCell": 9,
+   "sourceCell": 9.0,
    "sourceSheet": "architecture",
    "url": "assets/environment-library-v1/bridge-deck.webp"
   },
   "bridge-rail": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 19134,
+   "opaquePixels": 19134.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    274,
-    210
+    274.0,
+    210.0
    ],
-   "sourceCell": 10,
+   "sourceCell": 10.0,
    "sourceSheet": "architecture",
    "url": "assets/environment-library-v1/bridge-rail.webp"
   },
   "bush": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 38636,
+   "opaquePixels": 38636.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    296,
-    257
+    296.0,
+    257.0
    ],
-   "sourceCell": 14,
+   "sourceCell": 14.0,
    "sourceSheet": "nature-opaque",
    "url": "assets/environment-library-v1/bush.webp"
   },
   "cabbage": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 33330,
+   "opaquePixels": 33330.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    229,
-    249
+    229.0,
+    249.0
    ],
-   "sourceCell": 5,
+   "sourceCell": 5.0,
    "sourceSheet": "home-props",
    "url": "assets/environment-library-v1/cabbage.webp"
+  },
+  "cabbage-planted": {
+   "movable": true,
+   "origin": "root-buried-display-variant",
+   "review": "perspective-review",
+   "size": [
+    229,
+    204
+   ],
+   "url": "assets/environment-library-v1/cabbage-planted.webp"
   },
   "cabbage-seedling": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 25893,
+   "opaquePixels": 25893.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    247,
-    260
+    247.0,
+    260.0
    ],
-   "sourceCell": 11,
+   "sourceCell": 11.0,
    "sourceSheet": "nature-opaque",
    "url": "assets/environment-library-v1/cabbage-seedling.webp"
+  },
+  "cabbage-seedling-planted": {
+   "movable": true,
+   "origin": "root-buried-display-variant",
+   "review": "perspective-review",
+   "size": [
+    247,
+    197
+   ],
+   "url": "assets/environment-library-v1/cabbage-seedling-planted.webp"
   },
   "chrysanthemum": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 19052,
+   "opaquePixels": 19052.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    212,
-    271
+    212.0,
+    271.0
    ],
-   "sourceCell": 7,
+   "sourceCell": 7.0,
    "sourceSheet": "home-props",
    "url": "assets/environment-library-v1/chrysanthemum.webp"
+  },
+  "chrysanthemum-planted": {
+   "movable": true,
+   "origin": "root-buried-display-variant",
+   "review": "perspective-review",
+   "size": [
+    212,
+    211
+   ],
+   "url": "assets/environment-library-v1/chrysanthemum-planted.webp"
+  },
+  "coherent-house-column-centre-left": {
+   "movable": false,
+   "origin": "registered-single-view-house",
+   "review": "perspective-review",
+   "size": [
+    78,
+    430
+   ],
+   "url": "assets/environment-library-v1/coherent-house-column-centre-left.webp"
+  },
+  "coherent-house-column-centre-right": {
+   "movable": false,
+   "origin": "registered-single-view-house",
+   "review": "perspective-review",
+   "size": [
+    78,
+    430
+   ],
+   "url": "assets/environment-library-v1/coherent-house-column-centre-right.webp"
+  },
+  "coherent-house-column-left": {
+   "movable": false,
+   "origin": "registered-single-view-house",
+   "review": "perspective-review",
+   "size": [
+    73,
+    430
+   ],
+   "url": "assets/environment-library-v1/coherent-house-column-left.webp"
+  },
+  "coherent-house-column-right": {
+   "movable": false,
+   "origin": "registered-single-view-house",
+   "review": "perspective-review",
+   "size": [
+    70,
+    430
+   ],
+   "url": "assets/environment-library-v1/coherent-house-column-right.webp"
+  },
+  "coherent-house-door": {
+   "movable": false,
+   "origin": "registered-single-view-house",
+   "review": "perspective-review",
+   "size": [
+    338,
+    375
+   ],
+   "url": "assets/environment-library-v1/coherent-house-door.webp"
+  },
+  "coherent-house-foundation": {
+   "movable": false,
+   "origin": "registered-single-view-house",
+   "review": "perspective-review",
+   "size": [
+    1522,
+    92
+   ],
+   "url": "assets/environment-library-v1/coherent-house-foundation.webp"
+  },
+  "coherent-house-roof": {
+   "movable": false,
+   "origin": "registered-single-view-house",
+   "review": "perspective-review",
+   "size": [
+    1679,
+    302
+   ],
+   "url": "assets/environment-library-v1/coherent-house-roof.webp"
+  },
+  "coherent-house-wall": {
+   "movable": false,
+   "origin": "registered-single-view-house",
+   "review": "perspective-review",
+   "size": [
+    1451,
+    407
+   ],
+   "url": "assets/environment-library-v1/coherent-house-wall.webp"
+  },
+  "coherent-house-window-left": {
+   "movable": false,
+   "origin": "registered-single-view-house",
+   "review": "perspective-review",
+   "size": [
+    241,
+    248
+   ],
+   "url": "assets/environment-library-v1/coherent-house-window-left.webp"
+  },
+  "coherent-house-window-right": {
+   "movable": false,
+   "origin": "registered-single-view-house",
+   "review": "perspective-review",
+   "size": [
+    241,
+    248
+   ],
+   "url": "assets/environment-library-v1/coherent-house-window-right.webp"
   },
   "door": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 54909,
+   "opaquePixels": 54909.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    230,
-    267
+    230.0,
+    267.0
    ],
-   "sourceCell": 2,
+   "sourceCell": 2.0,
    "sourceSheet": "architecture",
    "url": "assets/environment-library-v1/door.webp"
   },
   "fence-post": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 8015,
+   "opaquePixels": 8015.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    32,
-    279
+    32.0,
+    279.0
    ],
-   "sourceCell": 8,
+   "sourceCell": 8.0,
    "sourceSheet": "home-props",
    "url": "assets/environment-library-v1/fence-post.webp"
   },
   "fence-rail": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 6215,
+   "opaquePixels": 6215.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    279,
-    27
+    279.0,
+    27.0
    ],
-   "sourceCell": 9,
+   "sourceCell": 9.0,
    "sourceSheet": "home-props",
    "url": "assets/environment-library-v1/fence-rail.webp"
   },
   "firewood": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 34904,
+   "opaquePixels": 34904.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    287,
-    184
+    287.0,
+    184.0
    ],
-   "sourceCell": 14,
+   "sourceCell": 14.0,
    "sourceSheet": "home-props",
    "url": "assets/environment-library-v1/firewood.webp"
   },
   "grass": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": true,
-   "opaquePixels": 14700,
+   "opaquePixels": 14700.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    276,
-    190
+    276.0,
+    190.0
    ],
-   "sourceCell": 11,
+   "sourceCell": 11.0,
    "sourceSheet": "home-props",
    "url": "assets/environment-library-v1/grass.webp"
   },
@@ -295,144 +425,154 @@
    "origin": "terrain-source-crop",
    "review": "draft",
    "size": [
-    128,
-    128
+    128.0,
+    128.0
    ],
    "url": "assets/environment-library-v1/ground-dry.webp"
   },
   "herb": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 28082,
+   "opaquePixels": 28082.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    272,
-    226
+    272.0,
+    226.0
    ],
-   "sourceCell": 10,
+   "sourceCell": 10.0,
    "sourceSheet": "nature-opaque",
    "url": "assets/environment-library-v1/herb.webp"
+  },
+  "herb-planted": {
+   "movable": true,
+   "origin": "root-buried-display-variant",
+   "review": "perspective-review",
+   "size": [
+    272,
+    162
+   ],
+   "url": "assets/environment-library-v1/herb-planted.webp"
   },
   "house-column": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 11623,
+   "opaquePixels": 11623.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    90,
-    285
+    90.0,
+    285.0
    ],
-   "sourceCell": 4,
+   "sourceCell": 4.0,
    "sourceSheet": "architecture",
    "url": "assets/environment-library-v1/house-column.webp"
   },
   "house-main": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 48804,
+   "opaquePixels": 48804.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    313,
-    187
+    313.0,
+    187.0
    ],
-   "sourceCell": 0,
+   "sourceCell": 0.0,
    "sourceSheet": "home-props",
    "url": "assets/environment-library-v1/house-main.webp"
   },
   "house-side": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 39426,
+   "opaquePixels": 39426.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    275,
-    204
+    275.0,
+    204.0
    ],
-   "sourceCell": 1,
+   "sourceCell": 1.0,
    "sourceSheet": "home-props",
    "url": "assets/environment-library-v1/house-side.webp"
   },
   "jar": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 33856,
+   "opaquePixels": 33856.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    190,
-    224
+    190.0,
+    224.0
    ],
-   "sourceCell": 12,
+   "sourceCell": 12.0,
    "sourceSheet": "home-props",
    "url": "assets/environment-library-v1/jar.webp"
   },
   "ladder": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 12559,
+   "opaquePixels": 12559.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    142,
-    288
+    142.0,
+    288.0
    ],
-   "sourceCell": 12,
+   "sourceCell": 12.0,
    "sourceSheet": "architecture",
    "url": "assets/environment-library-v1/ladder.webp"
   },
   "laundry": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": true,
-   "opaquePixels": 23837,
+   "opaquePixels": 23837.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    260,
-    240
+    260.0,
+    240.0
    ],
-   "sourceCell": 15,
+   "sourceCell": 15.0,
    "sourceSheet": "home-props",
    "url": "assets/environment-library-v1/laundry.webp"
   },
   "leaf-sprig": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": true,
-   "opaquePixels": 11499,
+   "opaquePixels": 11499.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    189,
-    203
+    189.0,
+    203.0
    ],
-   "sourceCell": 4,
+   "sourceCell": 4.0,
    "sourceSheet": "home-props",
    "url": "assets/environment-library-v1/leaf-sprig.webp"
   },
@@ -441,403 +581,423 @@
    "origin": "terrain-source-crop",
    "review": "draft",
    "size": [
-    128,
-    128
+    128.0,
+    128.0
    ],
    "url": "assets/environment-library-v1/path-mud.webp"
   },
   "peach-blossoms": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": true,
-   "opaquePixels": 17427,
+   "opaquePixels": 17427.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    288,
-    281
+    288.0,
+    281.0
    ],
-   "sourceCell": 3,
+   "sourceCell": 3.0,
    "sourceSheet": "nature-opaque",
    "url": "assets/environment-library-v1/peach-blossoms.webp"
   },
   "peach-trunk": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 20247,
+   "opaquePixels": 20247.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    299,
-    294
+    299.0,
+    294.0
    ],
-   "sourceCell": 2,
+   "sourceCell": 2.0,
    "sourceSheet": "nature-opaque",
    "url": "assets/environment-library-v1/peach-trunk.webp"
   },
   "pebble": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 13348,
+   "opaquePixels": 13348.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    166,
-    101
+    166.0,
+    101.0
    ],
-   "sourceCell": 12,
+   "sourceCell": 12.0,
    "sourceSheet": "nature-opaque",
    "url": "assets/environment-library-v1/pebble.webp"
   },
   "reed": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": true,
-   "opaquePixels": 11441,
+   "opaquePixels": 11441.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    211,
-    301
+    211.0,
+    301.0
    ],
-   "sourceCell": 4,
+   "sourceCell": 4.0,
    "sourceSheet": "nature-opaque",
    "url": "assets/environment-library-v1/reed.webp"
   },
   "rice": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": true,
-   "opaquePixels": 13270,
+   "opaquePixels": 13270.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    218,
-    293
+    218.0,
+    293.0
    ],
-   "sourceCell": 5,
+   "sourceCell": 5.0,
    "sourceSheet": "nature-opaque",
    "url": "assets/environment-library-v1/rice.webp"
   },
   "rock": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 34233,
+   "opaquePixels": 34233.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    260,
-    178
+    260.0,
+    178.0
    ],
-   "sourceCell": 10,
+   "sourceCell": 10.0,
    "sourceSheet": "home-props",
    "url": "assets/environment-library-v1/rock.webp"
   },
   "roof": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 29619,
+   "opaquePixels": 29619.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    313,
-    165
+    313.0,
+    165.0
    ],
-   "sourceCell": 0,
+   "sourceCell": 0.0,
    "sourceSheet": "architecture",
    "url": "assets/environment-library-v1/roof.webp"
   },
   "scallion": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 11782,
+   "opaquePixels": 11782.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    111,
-    293
+    111.0,
+    293.0
    ],
-   "sourceCell": 6,
+   "sourceCell": 6.0,
    "sourceSheet": "nature-opaque",
    "url": "assets/environment-library-v1/scallion.webp"
   },
   "steps": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 21787,
+   "opaquePixels": 21787.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    267,
-    117
+    267.0,
+    117.0
    ],
-   "sourceCell": 5,
+   "sourceCell": 5.0,
    "sourceSheet": "architecture",
    "url": "assets/environment-library-v1/steps.webp"
   },
   "stool": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 19761,
+   "opaquePixels": 19761.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    177,
-    176
+    177.0,
+    176.0
    ],
-   "sourceCell": 13,
+   "sourceCell": 13.0,
    "sourceSheet": "architecture",
    "url": "assets/environment-library-v1/stool.webp"
   },
   "stove": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 39275,
+   "opaquePixels": 39275.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    229,
-    273
+    229.0,
+    273.0
    ],
-   "sourceCell": 15,
+   "sourceCell": 15.0,
    "sourceSheet": "architecture",
    "url": "assets/environment-library-v1/stove.webp"
   },
   "stump": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 31979,
+   "opaquePixels": 31979.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    274,
-    263
+    274.0,
+    263.0
    ],
-   "sourceCell": 15,
+   "sourceCell": 15.0,
    "sourceSheet": "nature-opaque",
    "url": "assets/environment-library-v1/stump.webp"
   },
   "table": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 29065,
+   "opaquePixels": 29065.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    295,
-    198
+    295.0,
+    198.0
    ],
-   "sourceCell": 14,
+   "sourceCell": 14.0,
    "sourceSheet": "architecture",
    "url": "assets/environment-library-v1/table.webp"
   },
   "thatch": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 31864,
+   "opaquePixels": 31864.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    311,
-    164
+    311.0,
+    164.0
    ],
-   "sourceCell": 7,
+   "sourceCell": 7.0,
    "sourceSheet": "architecture",
    "url": "assets/environment-library-v1/thatch.webp"
   },
   "tree-canopy": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": true,
-   "opaquePixels": 22561,
+   "opaquePixels": 22561.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    285,
-    202
+    285.0,
+    202.0
    ],
-   "sourceCell": 3,
+   "sourceCell": 3.0,
    "sourceSheet": "home-props",
    "url": "assets/environment-library-v1/tree-canopy.webp"
   },
   "tree-trunk": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 11948,
+   "opaquePixels": 11948.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    280,
-    278
+    280.0,
+    278.0
    ],
-   "sourceCell": 2,
+   "sourceCell": 2.0,
    "sourceSheet": "home-props",
    "url": "assets/environment-library-v1/tree-trunk.webp"
   },
   "wall": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 51611,
+   "opaquePixels": 51611.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    244,
-    214
+    244.0,
+    214.0
    ],
-   "sourceCell": 1,
+   "sourceCell": 1.0,
    "sourceSheet": "architecture",
    "url": "assets/environment-library-v1/wall.webp"
   },
   "waterwheel": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 45467,
+   "opaquePixels": 45467.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    239,
-    275
+    239.0,
+    275.0
    ],
-   "sourceCell": 11,
+   "sourceCell": 11.0,
    "sourceSheet": "architecture",
    "url": "assets/environment-library-v1/waterwheel.webp"
   },
   "well": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 36781,
+   "opaquePixels": 36781.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    257,
-    259
+    257.0,
+    259.0
    ],
-   "sourceCell": 8,
+   "sourceCell": 8.0,
    "sourceSheet": "architecture",
    "url": "assets/environment-library-v1/well.webp"
   },
   "wheat": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 10317,
+   "opaquePixels": 10317.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    189,
-    305
+    189.0,
+    305.0
    ],
-   "sourceCell": 7,
+   "sourceCell": 7.0,
    "sourceSheet": "nature-opaque",
    "url": "assets/environment-library-v1/wheat.webp"
   },
   "white-flower": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 17465,
+   "opaquePixels": 17465.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    225,
-    281
+    225.0,
+    281.0
    ],
-   "sourceCell": 9,
+   "sourceCell": 9.0,
    "sourceSheet": "nature-opaque",
    "url": "assets/environment-library-v1/white-flower.webp"
+  },
+  "white-flower-planted": {
+   "movable": true,
+   "origin": "root-buried-display-variant",
+   "review": "perspective-review",
+   "size": [
+    225,
+    216
+   ],
+   "url": "assets/environment-library-v1/white-flower-planted.webp"
   },
   "window": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 32925,
+   "opaquePixels": 32925.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    200,
-    193
+    200.0,
+    193.0
    ],
-   "sourceCell": 3,
+   "sourceCell": 3.0,
    "sourceSheet": "architecture",
    "url": "assets/environment-library-v1/window.webp"
   },
   "yellow-flower": {
    "anchor": [
     0.5,
-    1
+    1.0
    ],
    "movable": false,
-   "opaquePixels": 19605,
+   "opaquePixels": 19605.0,
    "origin": "reference-guided-reconstruction",
    "review": "draft",
    "size": [
-    237,
-    271
+    237.0,
+    271.0
    ],
-   "sourceCell": 8,
+   "sourceCell": 8.0,
    "sourceSheet": "nature-opaque",
    "url": "assets/environment-library-v1/yellow-flower.webp"
+  },
+  "yellow-flower-planted": {
+   "movable": true,
+   "origin": "root-buried-display-variant",
+   "review": "perspective-review",
+   "size": [
+    237,
+    208
+   ],
+   "url": "assets/environment-library-v1/yellow-flower-planted.webp"
   }
  },
  "note": "AI-assisted reconstructed objects, not exact source-pixel extraction. Original sheets preserved. Draft until silhouette and assembly review.",
- "version": 1
+ "version": 1.0
 }

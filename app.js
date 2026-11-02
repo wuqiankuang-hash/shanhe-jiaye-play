@@ -1,4 +1,4 @@
-import {createEnvironmentAssembly} from './environment-assembly.js?v=4';
+import {createEnvironmentAssembly} from './environment-assembly.js?v=7';
 import {createBackgroundMotion} from './background-motion.js?v=15';
 import {hudIcon} from './hud-icons.js?v=11';
 import {createSceneAssets} from './scene-assets.js?v=8';
@@ -19,7 +19,7 @@ let lastLocation='',lastSavedAt='',sceneCamera=null;
 const sceneAssets=createSceneAssets();let sceneRequest=0;
 
 const sceneCatalog={
-  home:{image:'assets/environment-library-v1/home-terrain.webp',region:'青岚村 · 自家小院',title:'柴门小院',heading:'一餐一饭，也是一门经营',description:'在小院里歇歇脚，看看行囊，也盘算下一轮生意。养足精神，明日才有力气做活。',people:[['npc-neighbor',50,77]]},
+  home:{image:'assets/environment-library-v1/ground-perspective-v2.webp',region:'青岚村 · 自家小院',title:'柴门小院',heading:'一餐一饭，也是一门经营',description:'在小院里歇歇脚，看看行囊，也盘算下一轮生意。养足精神，明日才有力气做活。',people:[['npc-neighbor',50,77]]},
   village:{image:'assets/village-v3.webp',region:'青岚村 · 山村巷口',title:'井边人家',heading:'乡里有熟人，营生有门路',description:'村里只有这一家小卖部。买齐种苗和食材，再找管事谈场地；有本钱，也要先有手艺。',people:[['npc-shop',35,77],['npc-broker',68,76]]},
   field:{image:'assets/field-v3.webp',region:'青岚村 · 山间梯田',title:'一畦春绿',heading:'收成从下地学艺开始',description:'播种要菜种，养护要水，田租每日照付。做过农活、摸清时节，才好租下自己的菜田。',people:[['npc-farmer',48,76]]},
   pond:{image:'assets/pond-v3.webp',region:'青岚村 · 溪边鱼塘',title:'半塘青波',heading:'一塘鱼苗，日日都要照料',description:'学看水、学喂料，再盘下一口小塘。生长期每天都吃饲料，本领和照料决定有多少鱼能长成。',people:[['npc-fisher',48,70]]},

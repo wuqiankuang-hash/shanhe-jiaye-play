@@ -1,0 +1,140 @@
+{
+ "parts": [
+  {
+   "asset": "coherent-house-roof",
+   "kind": "house-part",
+   "offset": [
+    0,
+    0
+   ],
+   "order": 1,
+   "size": [
+    1679,
+    302
+   ]
+  },
+  {
+   "asset": "coherent-house-window-left",
+   "kind": "house-part",
+   "offset": [
+    247,
+    340
+   ],
+   "order": 1,
+   "size": [
+    241,
+    248
+   ]
+  },
+  {
+   "asset": "coherent-house-window-right",
+   "kind": "house-part",
+   "offset": [
+    1187,
+    340
+   ],
+   "order": 1,
+   "size": [
+    241,
+    248
+   ]
+  },
+  {
+   "asset": "coherent-house-door",
+   "kind": "house-part",
+   "offset": [
+    667,
+    336
+   ],
+   "order": 1,
+   "size": [
+    338,
+    375
+   ]
+  },
+  {
+   "asset": "coherent-house-column-left",
+   "kind": "house-part",
+   "offset": [
+    81,
+    302
+   ],
+   "order": 1,
+   "size": [
+    73,
+    430
+   ]
+  },
+  {
+   "asset": "coherent-house-column-centre-left",
+   "kind": "house-part",
+   "offset": [
+    542,
+    302
+   ],
+   "order": 1,
+   "size": [
+    78,
+    430
+   ]
+  },
+  {
+   "asset": "coherent-house-column-centre-right",
+   "kind": "house-part",
+   "offset": [
+    1073,
+    302
+   ],
+   "order": 1,
+   "size": [
+    78,
+    430
+   ]
+  },
+  {
+   "asset": "coherent-house-column-right",
+   "kind": "house-part",
+   "offset": [
+    1529,
+    302
+   ],
+   "order": 1,
+   "size": [
+    70,
+    430
+   ]
+  },
+  {
+   "asset": "coherent-house-foundation",
+   "kind": "house-part",
+   "offset": [
+    77,
+    709
+   ],
+   "order": 1,
+   "size": [
+    1522,
+    92
+   ]
+  },
+  {
+   "asset": "coherent-house-wall",
+   "kind": "house-part",
+   "offset": [
+    78,
+    302
+   ],
+   "order": 0,
+   "size": [
+    1451,
+    407
+   ]
+  }
+ ],
+ "reconstructionMismatch": 0,
+ "source": "docs/perspective-v2/house-coherent-source.png",
+ "sourceSize": [
+  1679,
+  801
+ ]
+}

@@ -7,3 +7,9 @@
 .object-trunk img,.object-building img,.object-rock img,.object-prop img{filter:drop-shadow(1px 3px 2px #302b2330)}
 
 .environment-paused .has-wind img{animation-play-state:paused}
+
+/* Roots are buried in prepared variants. Keep planted bases anchored to the ground. */
+.object-crop img,.object-plant img{clip-path:none;transform-origin:50% 100%}
+.object-soil-bed{clip-path:polygon(4% 0,96% 19%,100% 100%,0 60%)}
+
+.environment-object img{position:relative}.ground-contact{position:absolute;left:13%;right:13%;top:calc(100% - 3px);background:radial-gradient(ellipse,#30291d45,transparent 72%);border-radius:50%;pointer-events:none}.object-contact-shadow{filter:brightness(.16);mask-image:radial-gradient(ellipse,#0009,transparent 72%)}

@@ -1,1348 +1,2402 @@
 {
-  "version": 1,
+  "version": 2,
+  "status": "perspective-review",
   "sourceSize": [
     1672,
     941
   ],
-  "status": "assembly-review",
-  "terrain": "assets/environment-library-v1/home-terrain.webp",
+  "projection": {
+    "horizonY": 260,
+    "centreX": 836,
+    "cameraHeight": 4,
+    "focalLength": 1000
+  },
+  "terrain": "assets/environment-library-v1/ground-perspective-v2.webp",
   "objects": [
     {
-      "id": "vegetable-soil",
+      "id": "main-house-contact",
       "asset": "ground-dry",
-      "x": 1358,
-      "y": 463,
-      "width": 340,
-      "height": 208,
+      "x": 454.81947565543067,
+      "y": 534,
+      "width": 730.3610486891387,
+      "height": 22,
+      "kind": "contact-shadow",
+      "angle": 0,
+      "wind": false,
+      "phase": 0
+    },
+    {
+      "id": "coherent-house-wall",
+      "asset": "coherent-house-wall",
+      "x": 496.00599250936324,
+      "y": 331.6913857677903,
+      "width": 617.3543071161049,
+      "height": 173.16554307116107,
+      "angle": 0,
+      "wind": false,
+      "phase": 0,
+      "kind": "house-part",
+      "group": "main-house",
+      "uniformScale": 0.4254681647940075,
+      "groundY": 544
+    },
+    {
+      "id": "coherent-house-roof",
+      "asset": "coherent-house-roof",
+      "x": 462.81947565543067,
+      "y": 203.2,
+      "width": 714.3610486891386,
+      "height": 128.49138576779026,
+      "angle": 0,
+      "wind": false,
+      "phase": 0,
+      "kind": "house-part",
+      "group": "main-house",
+      "uniformScale": 0.4254681647940075,
+      "groundY": 544
+    },
+    {
+      "id": "coherent-house-window-left",
+      "asset": "coherent-house-window-left",
+      "x": 567.9101123595506,
+      "y": 347.85917602996255,
+      "width": 102.5378277153558,
+      "height": 105.51610486891386,
+      "angle": 0,
+      "wind": false,
+      "phase": 0,
+      "kind": "house-part",
+      "group": "main-house",
+      "uniformScale": 0.4254681647940075,
+      "groundY": 544
+    },
+    {
+      "id": "coherent-house-window-right",
+      "asset": "coherent-house-window-right",
+      "x": 967.8501872659176,
+      "y": 347.85917602996255,
+      "width": 102.5378277153558,
+      "height": 105.51610486891386,
+      "angle": 0,
+      "wind": false,
+      "phase": 0,
+      "kind": "house-part",
+      "group": "main-house",
+      "uniformScale": 0.4254681647940075,
+      "groundY": 544
+    },
+    {
+      "id": "coherent-house-door",
+      "asset": "coherent-house-door",
+      "x": 746.6067415730337,
+      "y": 346.1573033707865,
+      "width": 143.80823970037454,
+      "height": 159.5505617977528,
+      "angle": 0,
+      "wind": false,
+      "phase": 0,
+      "kind": "house-part",
+      "group": "main-house",
+      "uniformScale": 0.4254681647940075,
+      "groundY": 544
+    },
+    {
+      "id": "coherent-house-column-left",
+      "asset": "coherent-house-column-left",
+      "x": 497.28239700374525,
+      "y": 331.6913857677903,
+      "width": 31.059176029962547,
+      "height": 182.95131086142322,
+      "angle": 0,
+      "wind": false,
+      "phase": 0,
+      "kind": "house-part",
+      "group": "main-house",
+      "uniformScale": 0.4254681647940075,
+      "groundY": 544
+    },
+    {
+      "id": "coherent-house-column-centre-left",
+      "asset": "coherent-house-column-centre-left",
+      "x": 693.4232209737827,
+      "y": 331.6913857677903,
+      "width": 33.18651685393259,
+      "height": 182.95131086142322,
+      "angle": 0,
+      "wind": false,
+      "phase": 0,
+      "kind": "house-part",
+      "group": "main-house",
+      "uniformScale": 0.4254681647940075,
+      "groundY": 544
+    },
+    {
+      "id": "coherent-house-column-centre-right",
+      "asset": "coherent-house-column-centre-right",
+      "x": 919.3468164794008,
+      "y": 331.6913857677903,
+      "width": 33.18651685393259,
+      "height": 182.95131086142322,
+      "angle": 0,
+      "wind": false,
+      "phase": 0,
+      "kind": "house-part",
+      "group": "main-house",
+      "uniformScale": 0.4254681647940075,
+      "groundY": 544
+    },
+    {
+      "id": "coherent-house-column-right",
+      "asset": "coherent-house-column-right",
+      "x": 1113.360299625468,
+      "y": 331.6913857677903,
+      "width": 29.782771535580526,
+      "height": 182.95131086142322,
+      "angle": 0,
+      "wind": false,
+      "phase": 0,
+      "kind": "house-part",
+      "group": "main-house",
+      "uniformScale": 0.4254681647940075,
+      "groundY": 544
+    },
+    {
+      "id": "coherent-house-foundation",
+      "asset": "coherent-house-foundation",
+      "x": 495.58052434456926,
+      "y": 504.8569288389513,
+      "width": 647.5625468164794,
+      "height": 39.14307116104869,
+      "angle": 0,
+      "wind": false,
+      "phase": 0,
+      "kind": "house-part",
+      "group": "main-house",
+      "uniformScale": 0.4254681647940075,
+      "groundY": 544
+    },
+    {
+      "id": "house-side-11",
+      "asset": "house-side",
+      "x": 1261.7938112745098,
+      "y": 314.625,
+      "width": 236.4123774509804,
+      "height": 175.375,
+      "groundY": 490,
+      "kind": "building",
+      "angle": 0,
+      "wind": false,
+      "phase": 8.03,
+      "heightMetres": 3.05,
+      "elevationMetres": 0,
+      "world": {
+        "x": 9.460869565217392,
+        "z": 17.391304347826086
+      }
+    },
+    {
+      "id": "house-side-12",
+      "asset": "house-side",
+      "x": 30.399816176470637,
+      "y": 338.375,
+      "width": 339.2003676470587,
+      "height": 251.62499999999997,
+      "groundY": 590,
+      "kind": "building",
+      "angle": 0,
+      "wind": false,
+      "phase": 8.76,
+      "heightMetres": 3.05,
+      "elevationMetres": 0,
+      "world": {
+        "x": -7.709090909090909,
+        "z": 12.121212121212121
+      },
+      "mirror": true
+    },
+    {
+      "id": "jar-13",
+      "asset": "jar",
+      "x": 356.71651785714283,
+      "y": 510.1,
+      "width": 46.566964285714285,
+      "height": 54.9,
+      "groundY": 565,
+      "kind": "prop",
+      "angle": 0,
+      "wind": false,
+      "phase": 9.49,
+      "heightMetres": 0.72,
+      "elevationMetres": 0,
+      "world": {
+        "x": -5.980327868852459,
+        "z": 13.114754098360656
+      }
+    },
+    {
+      "id": "jar-14",
+      "asset": "jar",
+      "x": 1136.8691964285715,
+      "y": 508.46,
+      "width": 46.261607142857144,
+      "height": 54.54,
+      "groundY": 563,
+      "kind": "prop",
+      "angle": 0,
+      "wind": false,
+      "phase": 10.219999999999999,
+      "heightMetres": 0.72,
+      "elevationMetres": 0,
+      "world": {
+        "x": 4.2772277227722775,
+        "z": 13.201320132013201
+      }
+    },
+    {
+      "id": "jar-15",
+      "asset": "jar",
+      "x": 1311.9075892857143,
+      "y": 454.34000000000003,
+      "width": 36.184821428571425,
+      "height": 42.66,
+      "groundY": 497,
+      "kind": "prop",
+      "angle": 0,
+      "wind": false,
+      "phase": 10.95,
+      "heightMetres": 0.72,
+      "elevationMetres": 0,
+      "world": {
+        "x": 8.337552742616033,
+        "z": 16.877637130801688
+      }
+    },
+    {
+      "id": "jar-16",
+      "asset": "jar",
+      "x": 1185.41875,
+      "y": 524.04,
+      "width": 49.1625,
+      "height": 57.96,
+      "groundY": 582,
+      "kind": "prop",
+      "angle": 0,
+      "wind": false,
+      "phase": 11.68,
+      "heightMetres": 0.72,
+      "elevationMetres": 0,
+      "world": {
+        "x": 4.645962732919255,
+        "z": 12.422360248447205
+      }
+    },
+    {
+      "id": "basket-17",
+      "asset": "basket",
+      "x": 397.0576923076923,
+      "y": 533.68,
+      "width": 35.88461538461539,
+      "height": 37.32,
+      "groundY": 571,
+      "kind": "prop",
+      "angle": 0,
+      "wind": false,
+      "phase": 12.41,
+      "heightMetres": 0.48,
+      "elevationMetres": 0,
+      "world": {
+        "x": -5.414790996784566,
+        "z": 12.861736334405144
+      }
+    },
+    {
+      "id": "firewood-18",
+      "asset": "firewood",
+      "x": 1058.2584239130435,
+      "y": 515.3,
+      "width": 63.48315217391305,
+      "height": 40.7,
+      "groundY": 556,
+      "kind": "prop",
+      "angle": 0,
+      "wind": false,
+      "phase": 13.14,
+      "heightMetres": 0.55,
+      "elevationMetres": 0,
+      "world": {
+        "x": 3.4324324324324325,
+        "z": 13.513513513513514
+      }
+    },
+    {
+      "id": "stool-19",
+      "asset": "stool",
+      "x": 663.7079545454545,
+      "y": 515.6,
+      "width": 32.58409090909091,
+      "height": 32.4,
+      "groundY": 548,
+      "kind": "prop",
+      "angle": 0,
+      "wind": false,
+      "phase": 13.87,
+      "heightMetres": 0.45,
+      "elevationMetres": 0,
+      "world": {
+        "x": -2.1666666666666665,
+        "z": 13.88888888888889
+      }
+    },
+    {
+      "id": "garden-soil",
+      "asset": "ground-dry",
+      "x": 1322,
+      "y": 472,
+      "width": 350,
+      "height": 238,
       "kind": "soil-bed",
       "angle": 0,
       "wind": false,
       "phase": 0
     },
     {
-      "id": "wall-0",
-      "asset": "wall",
-      "x": 460,
-      "y": 246,
-      "width": 250,
-      "height": 254,
-      "kind": "wall",
-      "angle": 0,
-      "wind": false,
-      "phase": 0.0
-    },
-    {
-      "id": "wall-1",
-      "asset": "wall",
-      "x": 675,
-      "y": 246,
-      "width": 250,
-      "height": 254,
-      "kind": "wall",
-      "angle": 0,
-      "wind": false,
-      "phase": 0.73
-    },
-    {
-      "id": "wall-2",
-      "asset": "wall",
-      "x": 890,
-      "y": 246,
-      "width": 250,
-      "height": 254,
-      "kind": "wall",
-      "angle": 0,
-      "wind": false,
-      "phase": 1.46
-    },
-    {
-      "id": "house-column-3",
-      "asset": "house-column",
-      "x": 477,
-      "y": 246,
-      "width": 34,
-      "height": 260,
-      "kind": "column",
-      "angle": 0,
-      "wind": false,
-      "phase": 2.19
-    },
-    {
-      "id": "house-column-4",
-      "asset": "house-column",
-      "x": 692,
-      "y": 246,
-      "width": 34,
-      "height": 260,
-      "kind": "column",
-      "angle": 0,
-      "wind": false,
-      "phase": 2.92
-    },
-    {
-      "id": "house-column-5",
-      "asset": "house-column",
-      "x": 907,
-      "y": 246,
-      "width": 34,
-      "height": 260,
-      "kind": "column",
-      "angle": 0,
-      "wind": false,
-      "phase": 3.65
-    },
-    {
-      "id": "house-column-6",
-      "asset": "house-column",
-      "x": 1132,
-      "y": 246,
-      "width": 34,
-      "height": 260,
-      "kind": "column",
-      "angle": 0,
-      "wind": false,
-      "phase": 4.38
-    },
-    {
-      "id": "door-7",
-      "asset": "door",
-      "x": 755,
-      "y": 333,
-      "width": 115,
-      "height": 171,
-      "kind": "door",
-      "angle": 0,
-      "wind": false,
-      "phase": 5.11
-    },
-    {
-      "id": "window-8",
-      "asset": "window",
-      "x": 520,
-      "y": 338,
-      "width": 105,
-      "height": 110,
-      "kind": "window",
-      "angle": 0,
-      "wind": false,
-      "phase": 5.84
-    },
-    {
-      "id": "blind-9",
-      "asset": "blind",
-      "x": 517,
-      "y": 333,
-      "width": 111,
-      "height": 58,
-      "kind": "blind",
-      "angle": 0,
-      "wind": false,
-      "phase": 6.57
-    },
-    {
-      "id": "window-10",
-      "asset": "window",
-      "x": 960,
-      "y": 338,
-      "width": 105,
-      "height": 110,
-      "kind": "window",
-      "angle": 0,
-      "wind": false,
-      "phase": 7.3
-    },
-    {
-      "id": "blind-11",
-      "asset": "blind",
-      "x": 957,
-      "y": 333,
-      "width": 111,
-      "height": 58,
-      "kind": "blind",
-      "angle": 0,
-      "wind": false,
-      "phase": 8.03
-    },
-    {
-      "id": "roof-12",
-      "asset": "roof",
-      "x": 380,
-      "y": 118,
-      "width": 815,
-      "height": 220,
-      "kind": "roof",
-      "angle": 0,
-      "wind": false,
-      "phase": 8.76
-    },
-    {
-      "id": "steps-13",
-      "asset": "steps",
-      "x": 473,
-      "y": 486,
-      "width": 640,
-      "height": 63,
-      "kind": "steps",
-      "angle": 0,
-      "wind": false,
-      "phase": 9.49
-    },
-    {
-      "id": "house-side-14",
-      "asset": "house-side",
-      "x": 1195,
-      "y": 188,
-      "width": 335,
-      "height": 266,
-      "kind": "building",
-      "angle": 0,
-      "wind": false,
-      "phase": 10.22
-    },
-    {
-      "id": "house-side-15",
-      "asset": "house-side",
-      "x": -125,
-      "y": 218,
-      "width": 500,
-      "height": 330,
-      "kind": "building",
-      "angle": 0,
-      "wind": false,
-      "phase": 10.95
-    },
-    {
-      "id": "jar-16",
-      "asset": "jar",
-      "x": 307,
-      "y": 443,
-      "width": 57,
-      "height": 90,
-      "kind": "prop",
-      "angle": 0,
-      "wind": false,
-      "phase": 11.68
-    },
-    {
-      "id": "jar-17",
-      "asset": "jar",
-      "x": 1118,
-      "y": 427,
-      "width": 58,
-      "height": 88,
-      "kind": "prop",
-      "angle": 0,
-      "wind": false,
-      "phase": 12.41
-    },
-    {
-      "id": "jar-18",
-      "asset": "jar",
-      "x": 1320,
-      "y": 419,
-      "width": 54,
-      "height": 79,
-      "kind": "prop",
-      "angle": 0,
-      "wind": false,
-      "phase": 13.14
-    },
-    {
-      "id": "jar-19",
-      "asset": "jar",
-      "x": 1165,
-      "y": 449,
-      "width": 44,
-      "height": 63,
-      "kind": "prop",
-      "angle": 0,
-      "wind": false,
-      "phase": 13.87
-    },
-    {
-      "id": "firewood-20",
-      "asset": "firewood",
-      "x": 1015,
-      "y": 442,
-      "width": 114,
-      "height": 58,
-      "kind": "prop",
-      "angle": 0,
-      "wind": false,
-      "phase": 14.6
-    },
-    {
-      "id": "basket-21",
-      "asset": "basket",
-      "x": 343,
-      "y": 458,
-      "width": 62,
-      "height": 64,
-      "kind": "prop",
-      "angle": 0,
-      "wind": false,
-      "phase": 15.33
-    },
-    {
-      "id": "stool-22",
-      "asset": "stool",
-      "x": 653,
-      "y": 458,
-      "width": 52,
-      "height": 47,
-      "kind": "prop",
-      "angle": 0,
-      "wind": false,
-      "phase": 16.06
-    },
-    {
-      "id": "cabbage-seedling-23",
-      "asset": "cabbage-seedling",
-      "x": 1374,
-      "y": 431,
-      "width": 48,
-      "height": 58,
+      "id": "cabbage-seedling-planted-21",
+      "asset": "cabbage-seedling-planted",
+      "x": 1362.823521573604,
+      "y": 489.5525,
+      "width": 14.352956852791877,
+      "height": 11.4475,
+      "groundY": 501,
       "kind": "crop",
       "angle": 0,
       "wind": true,
-      "phase": 16.79
+      "phase": 15.33,
+      "heightMetres": 0.19,
+      "elevationMetres": 0,
+      "world": {
+        "x": 8.863070539419088,
+        "z": 16.597510373443985
+      }
     },
     {
-      "id": "cabbage-seedling-24",
-      "asset": "cabbage-seedling",
-      "x": 1431,
-      "y": 438,
-      "width": 48,
-      "height": 58,
+      "id": "cabbage-seedling-planted-22",
+      "asset": "cabbage-seedling-planted",
+      "x": 1418.615076142132,
+      "y": 496.22,
+      "width": 14.76984771573604,
+      "height": 11.78,
+      "groundY": 508,
       "kind": "crop",
       "angle": 0,
       "wind": true,
-      "phase": 17.52
+      "phase": 16.06,
+      "heightMetres": 0.19,
+      "elevationMetres": 0,
+      "world": {
+        "x": 9.516129032258064,
+        "z": 16.129032258064516
+      }
     },
     {
-      "id": "cabbage-seedling-25",
-      "asset": "cabbage-seedling",
-      "x": 1488,
-      "y": 445,
-      "width": 48,
-      "height": 58,
+      "id": "cabbage-seedling-planted-23",
+      "asset": "cabbage-seedling-planted",
+      "x": 1474.40663071066,
+      "y": 502.8875,
+      "width": 15.186738578680204,
+      "height": 12.1125,
+      "groundY": 515,
       "kind": "crop",
       "angle": 0,
       "wind": true,
-      "phase": 18.25
+      "phase": 16.79,
+      "heightMetres": 0.19,
+      "elevationMetres": 0,
+      "world": {
+        "x": 10.133333333333333,
+        "z": 15.686274509803921
+      }
     },
     {
-      "id": "cabbage-seedling-26",
-      "asset": "cabbage-seedling",
-      "x": 1545,
-      "y": 452,
-      "width": 48,
-      "height": 58,
+      "id": "cabbage-seedling-planted-24",
+      "asset": "cabbage-seedling-planted",
+      "x": 1530.1981852791878,
+      "y": 509.555,
+      "width": 15.603629441624365,
+      "height": 12.445,
+      "groundY": 522,
       "kind": "crop",
       "angle": 0,
       "wind": true,
-      "phase": 18.98
+      "phase": 17.52,
+      "heightMetres": 0.19,
+      "elevationMetres": 0,
+      "world": {
+        "x": 10.717557251908397,
+        "z": 15.267175572519085
+      }
     },
     {
-      "id": "cabbage-seedling-27",
-      "asset": "cabbage-seedling",
-      "x": 1602,
-      "y": 459,
-      "width": 48,
-      "height": 58,
+      "id": "cabbage-seedling-planted-25",
+      "asset": "cabbage-seedling-planted",
+      "x": 1585.9897398477158,
+      "y": 516.2225,
+      "width": 16.020520304568528,
+      "height": 12.7775,
+      "groundY": 529,
       "kind": "crop",
       "angle": 0,
       "wind": true,
-      "phase": 19.71
+      "phase": 18.25,
+      "heightMetres": 0.19,
+      "elevationMetres": 0,
+      "world": {
+        "x": 11.271375464684015,
+        "z": 14.869888475836431
+      }
     },
     {
-      "id": "cabbage-seedling-28",
-      "asset": "cabbage-seedling",
-      "x": 1363,
-      "y": 480,
-      "width": 53,
-      "height": 63,
+      "id": "cabbage-seedling-planted-26",
+      "asset": "cabbage-seedling-planted",
+      "x": 1352.4835152284263,
+      "y": 532.415,
+      "width": 17.03296954314721,
+      "height": 13.585,
+      "groundY": 546,
       "kind": "crop",
       "angle": 0,
       "wind": true,
-      "phase": 20.44
+      "phase": 18.98,
+      "heightMetres": 0.19,
+      "elevationMetres": 0,
+      "world": {
+        "x": 7.3426573426573425,
+        "z": 13.986013986013987
+      }
     },
     {
-      "id": "cabbage-seedling-29",
-      "asset": "cabbage-seedling",
-      "x": 1420,
-      "y": 487,
-      "width": 53,
-      "height": 63,
+      "id": "cabbage-seedling-planted-27",
+      "asset": "cabbage-seedling-planted",
+      "x": 1408.2750697969543,
+      "y": 539.0825,
+      "width": 17.44986040609137,
+      "height": 13.9175,
+      "groundY": 553,
       "kind": "crop",
       "angle": 0,
       "wind": true,
-      "phase": 21.17
+      "phase": 19.71,
+      "heightMetres": 0.19,
+      "elevationMetres": 0,
+      "world": {
+        "x": 7.931740614334471,
+        "z": 13.651877133105803
+      }
     },
     {
-      "id": "cabbage-seedling-30",
-      "asset": "cabbage-seedling",
-      "x": 1477,
-      "y": 494,
-      "width": 53,
-      "height": 63,
+      "id": "cabbage-seedling-planted-28",
+      "asset": "cabbage-seedling-planted",
+      "x": 1464.0666243654823,
+      "y": 545.75,
+      "width": 17.866751269035532,
+      "height": 14.25,
+      "groundY": 560,
       "kind": "crop",
       "angle": 0,
       "wind": true,
-      "phase": 21.9
+      "phase": 20.439999999999998,
+      "heightMetres": 0.19,
+      "elevationMetres": 0,
+      "world": {
+        "x": 8.493333333333334,
+        "z": 13.333333333333334
+      }
     },
     {
-      "id": "cabbage-seedling-31",
-      "asset": "cabbage-seedling",
-      "x": 1534,
-      "y": 501,
-      "width": 53,
-      "height": 63,
+      "id": "cabbage-seedling-planted-29",
+      "asset": "cabbage-seedling-planted",
+      "x": 1519.85817893401,
+      "y": 552.4175,
+      "width": 18.283642131979697,
+      "height": 14.5825,
+      "groundY": 567,
       "kind": "crop",
       "angle": 0,
       "wind": true,
-      "phase": 22.63
+      "phase": 21.169999999999998,
+      "heightMetres": 0.19,
+      "elevationMetres": 0,
+      "world": {
+        "x": 9.029315960912053,
+        "z": 13.029315960912053
+      }
     },
     {
-      "id": "cabbage-seedling-32",
-      "asset": "cabbage-seedling",
-      "x": 1591,
-      "y": 508,
-      "width": 53,
-      "height": 63,
+      "id": "cabbage-seedling-planted-30",
+      "asset": "cabbage-seedling-planted",
+      "x": 1575.649733502538,
+      "y": 559.085,
+      "width": 18.700532994923858,
+      "height": 14.915000000000001,
+      "groundY": 574,
       "kind": "crop",
       "angle": 0,
       "wind": true,
-      "phase": 23.36
+      "phase": 21.9,
+      "heightMetres": 0.19,
+      "elevationMetres": 0,
+      "world": {
+        "x": 9.54140127388535,
+        "z": 12.738853503184714
+      }
     },
     {
-      "id": "cabbage-33",
-      "asset": "cabbage",
-      "x": 1352,
-      "y": 529,
-      "width": 58,
-      "height": 68,
+      "id": "cabbage-planted-31",
+      "asset": "cabbage-planted",
+      "x": 1335.744087009804,
+      "y": 562.0375,
+      "width": 32.51182598039215,
+      "height": 28.9625,
+      "groundY": 591,
       "kind": "crop",
       "angle": 0,
       "wind": true,
-      "phase": 24.09
+      "phase": 22.63,
+      "heightMetres": 0.35,
+      "elevationMetres": 0,
+      "world": {
+        "x": 6.235649546827794,
+        "z": 12.084592145015106
+      }
     },
     {
-      "id": "cabbage-34",
-      "asset": "cabbage",
-      "x": 1409,
-      "y": 536,
-      "width": 58,
-      "height": 68,
+      "id": "cabbage-planted-32",
+      "asset": "cabbage-planted",
+      "x": 1391.400306372549,
+      "y": 568.425,
+      "width": 33.199387254901964,
+      "height": 29.575,
+      "groundY": 598,
       "kind": "crop",
       "angle": 0,
       "wind": true,
-      "phase": 24.82
+      "phase": 23.36,
+      "heightMetres": 0.35,
+      "elevationMetres": 0,
+      "world": {
+        "x": 6.769230769230769,
+        "z": 11.834319526627219
+      }
     },
     {
-      "id": "cabbage-35",
-      "asset": "cabbage",
-      "x": 1466,
-      "y": 543,
-      "width": 58,
-      "height": 68,
+      "id": "cabbage-planted-33",
+      "asset": "cabbage-planted",
+      "x": 1447.0565257352941,
+      "y": 574.8125,
+      "width": 33.88694852941176,
+      "height": 30.187499999999996,
+      "groundY": 605,
       "kind": "crop",
       "angle": 0,
       "wind": true,
-      "phase": 25.55
+      "phase": 24.09,
+      "heightMetres": 0.35,
+      "elevationMetres": 0,
+      "world": {
+        "x": 7.281159420289855,
+        "z": 11.594202898550725
+      }
     },
     {
-      "id": "cabbage-36",
-      "asset": "cabbage",
-      "x": 1523,
-      "y": 550,
-      "width": 58,
-      "height": 68,
+      "id": "cabbage-planted-34",
+      "asset": "cabbage-planted",
+      "x": 1502.7127450980392,
+      "y": 581.2,
+      "width": 34.574509803921565,
+      "height": 30.799999999999997,
+      "groundY": 612,
       "kind": "crop",
       "angle": 0,
       "wind": true,
-      "phase": 26.28
+      "phase": 24.82,
+      "heightMetres": 0.35,
+      "elevationMetres": 0,
+      "world": {
+        "x": 7.7727272727272725,
+        "z": 11.363636363636363
+      }
     },
     {
-      "id": "cabbage-37",
-      "asset": "cabbage",
-      "x": 1580,
-      "y": 557,
-      "width": 58,
-      "height": 68,
+      "id": "cabbage-planted-35",
+      "asset": "cabbage-planted",
+      "x": 1558.3689644607844,
+      "y": 587.5875,
+      "width": 35.26207107843137,
+      "height": 31.412499999999998,
+      "groundY": 619,
       "kind": "crop",
       "angle": 0,
       "wind": true,
-      "phase": 27.01
+      "phase": 25.55,
+      "heightMetres": 0.35,
+      "elevationMetres": 0,
+      "world": {
+        "x": 8.245125348189415,
+        "z": 11.142061281337048
+      }
     },
     {
-      "id": "cabbage-38",
-      "asset": "cabbage",
-      "x": 1341,
-      "y": 578,
-      "width": 63,
-      "height": 73,
+      "id": "cabbage-planted-36",
+      "asset": "cabbage-planted",
+      "x": 1324.534068627451,
+      "y": 603.1,
+      "width": 36.93186274509804,
+      "height": 32.9,
+      "groundY": 636,
       "kind": "crop",
       "angle": 0,
       "wind": true,
-      "phase": 27.74
+      "phase": 26.28,
+      "heightMetres": 0.35,
+      "elevationMetres": 0,
+      "world": {
+        "x": 5.3936170212765955,
+        "z": 10.638297872340425
+      }
     },
     {
-      "id": "cabbage-39",
-      "asset": "cabbage",
-      "x": 1398,
-      "y": 585,
-      "width": 63,
-      "height": 73,
+      "id": "cabbage-planted-37",
+      "asset": "cabbage-planted",
+      "x": 1380.190287990196,
+      "y": 609.4875,
+      "width": 37.61942401960784,
+      "height": 33.512499999999996,
+      "groundY": 643,
       "kind": "crop",
       "angle": 0,
       "wind": true,
-      "phase": 28.47
+      "phase": 27.009999999999998,
+      "heightMetres": 0.35,
+      "elevationMetres": 0,
+      "world": {
+        "x": 5.879895561357702,
+        "z": 10.443864229765014
+      }
     },
     {
-      "id": "cabbage-40",
-      "asset": "cabbage",
-      "x": 1455,
-      "y": 592,
-      "width": 63,
-      "height": 73,
+      "id": "cabbage-planted-38",
+      "asset": "cabbage-planted",
+      "x": 1435.8465073529412,
+      "y": 615.875,
+      "width": 38.306985294117645,
+      "height": 34.125,
+      "groundY": 650,
       "kind": "crop",
       "angle": 0,
       "wind": true,
-      "phase": 29.2
+      "phase": 27.74,
+      "heightMetres": 0.35,
+      "elevationMetres": 0,
+      "world": {
+        "x": 6.348717948717948,
+        "z": 10.256410256410257
+      }
     },
     {
-      "id": "cabbage-41",
-      "asset": "cabbage",
-      "x": 1512,
-      "y": 599,
-      "width": 63,
-      "height": 73,
+      "id": "cabbage-planted-39",
+      "asset": "cabbage-planted",
+      "x": 1491.5027267156863,
+      "y": 622.2625,
+      "width": 38.99454656862745,
+      "height": 34.7375,
+      "groundY": 657,
       "kind": "crop",
       "angle": 0,
       "wind": true,
-      "phase": 29.93
+      "phase": 28.47,
+      "heightMetres": 0.35,
+      "elevationMetres": 0,
+      "world": {
+        "x": 6.801007556675063,
+        "z": 10.075566750629722
+      }
     },
     {
-      "id": "cabbage-42",
-      "asset": "cabbage",
-      "x": 1569,
-      "y": 606,
-      "width": 63,
-      "height": 73,
+      "id": "cabbage-planted-40",
+      "asset": "cabbage-planted",
+      "x": 1547.1589460784314,
+      "y": 628.65,
+      "width": 39.682107843137246,
+      "height": 35.349999999999994,
+      "groundY": 664,
       "kind": "crop",
       "angle": 0,
       "wind": true,
-      "phase": 30.66
+      "phase": 29.2,
+      "heightMetres": 0.35,
+      "elevationMetres": 0,
+      "world": {
+        "x": 7.237623762376238,
+        "z": 9.900990099009901
+      }
+    },
+    {
+      "id": "bean-stake-41",
+      "asset": "bean-stake",
+      "x": 1408.088813559322,
+      "y": 411.05,
+      "width": 43.82237288135593,
+      "height": 76.95,
+      "groundY": 488,
+      "kind": "crop",
+      "angle": 0,
+      "wind": false,
+      "phase": 29.93,
+      "heightMetres": 1.35,
+      "elevationMetres": 0,
+      "world": {
+        "x": 10.421052631578947,
+        "z": 17.54385964912281
+      }
+    },
+    {
+      "id": "bean-stake-42",
+      "asset": "bean-stake",
+      "x": 1452.32,
+      "y": 416.35,
+      "width": 45.36,
+      "height": 79.65,
+      "groundY": 496,
+      "kind": "crop",
+      "angle": 0,
+      "wind": false,
+      "phase": 30.66,
+      "heightMetres": 1.35,
+      "elevationMetres": 0,
+      "world": {
+        "x": 10.830508474576272,
+        "z": 16.949152542372882
+      }
     },
     {
       "id": "bean-stake-43",
       "asset": "bean-stake",
-      "x": 1437,
-      "y": 342,
-      "width": 47,
-      "height": 129,
+      "x": 1496.551186440678,
+      "y": 421.65,
+      "width": 46.897627118644074,
+      "height": 82.35000000000001,
+      "groundY": 504,
       "kind": "crop",
       "angle": 0,
       "wind": false,
-      "phase": 31.39
+      "phase": 31.39,
+      "heightMetres": 1.35,
+      "elevationMetres": 0,
+      "world": {
+        "x": 11.21311475409836,
+        "z": 16.39344262295082
+      }
     },
     {
       "id": "bean-stake-44",
       "asset": "bean-stake",
-      "x": 1484,
-      "y": 352,
-      "width": 47,
-      "height": 129,
+      "x": 1540.782372881356,
+      "y": 426.95,
+      "width": 48.43525423728814,
+      "height": 85.05000000000001,
+      "groundY": 512,
       "kind": "crop",
       "angle": 0,
       "wind": false,
-      "phase": 32.12
+      "phase": 32.12,
+      "heightMetres": 1.35,
+      "elevationMetres": 0,
+      "world": {
+        "x": 11.571428571428571,
+        "z": 15.873015873015873
+      }
     },
     {
       "id": "bean-stake-45",
       "asset": "bean-stake",
-      "x": 1531,
-      "y": 362,
-      "width": 47,
-      "height": 129,
+      "x": 1585.0135593220339,
+      "y": 432.25,
+      "width": 49.9728813559322,
+      "height": 87.75,
+      "groundY": 520,
       "kind": "crop",
       "angle": 0,
       "wind": false,
-      "phase": 32.85
+      "phase": 32.85,
+      "heightMetres": 1.35,
+      "elevationMetres": 0,
+      "world": {
+        "x": 11.907692307692308,
+        "z": 15.384615384615385
+      }
     },
     {
-      "id": "bean-stake-46",
-      "asset": "bean-stake",
-      "x": 1578,
-      "y": 372,
-      "width": 47,
-      "height": 129,
-      "kind": "crop",
-      "angle": 0,
-      "wind": false,
-      "phase": 33.58
-    },
-    {
-      "id": "bean-stake-47",
-      "asset": "bean-stake",
-      "x": 1625,
-      "y": 382,
-      "width": 47,
-      "height": 129,
-      "kind": "crop",
-      "angle": 0,
-      "wind": false,
-      "phase": 34.31
-    },
-    {
-      "id": "fence-rail-48",
-      "asset": "fence-rail",
-      "x": 1355.0,
-      "y": 493.0,
-      "width": 64.66335217909804,
-      "height": 10,
-      "kind": "rail",
-      "angle": 27.220247540806614,
-      "wind": false,
-      "phase": 35.04
-    },
-    {
-      "id": "fence-rail-49",
-      "asset": "fence-rail",
-      "x": 1355.0,
-      "y": 528.0,
-      "width": 64.66335217909804,
-      "height": 10,
-      "kind": "rail",
-      "angle": 27.220247540806614,
-      "wind": false,
-      "phase": 35.77
-    },
-    {
-      "id": "fence-rail-50",
-      "asset": "fence-rail",
-      "x": 1407.1666666666667,
-      "y": 519.8333333333333,
-      "width": 64.66335217909804,
-      "height": 10,
-      "kind": "rail",
-      "angle": 27.220247540806614,
-      "wind": false,
-      "phase": 36.5
-    },
-    {
-      "id": "fence-rail-51",
-      "asset": "fence-rail",
-      "x": 1407.1666666666667,
-      "y": 554.8333333333333,
-      "width": 64.66335217909804,
-      "height": 10,
-      "kind": "rail",
-      "angle": 27.220247540806614,
-      "wind": false,
-      "phase": 37.23
-    },
-    {
-      "id": "fence-rail-52",
-      "asset": "fence-rail",
-      "x": 1459.3333333333333,
-      "y": 546.6666666666666,
-      "width": 64.66335217909804,
-      "height": 10,
-      "kind": "rail",
-      "angle": 27.220247540806614,
-      "wind": false,
-      "phase": 37.96
-    },
-    {
-      "id": "fence-rail-53",
-      "asset": "fence-rail",
-      "x": 1459.3333333333333,
-      "y": 581.6666666666666,
-      "width": 64.66335217909804,
-      "height": 10,
-      "kind": "rail",
-      "angle": 27.220247540806614,
-      "wind": false,
-      "phase": 38.69
-    },
-    {
-      "id": "fence-rail-54",
-      "asset": "fence-rail",
-      "x": 1511.5,
-      "y": 573.5,
-      "width": 64.66335217909804,
-      "height": 10,
-      "kind": "rail",
-      "angle": 27.220247540806614,
-      "wind": false,
-      "phase": 39.42
-    },
-    {
-      "id": "fence-rail-55",
-      "asset": "fence-rail",
-      "x": 1511.5,
-      "y": 608.5,
-      "width": 64.66335217909804,
-      "height": 10,
-      "kind": "rail",
-      "angle": 27.220247540806614,
-      "wind": false,
-      "phase": 40.15
-    },
-    {
-      "id": "fence-rail-56",
-      "asset": "fence-rail",
-      "x": 1563.6666666666667,
-      "y": 600.3333333333334,
-      "width": 64.66335217909804,
-      "height": 10,
-      "kind": "rail",
-      "angle": 27.220247540806614,
-      "wind": false,
-      "phase": 40.88
-    },
-    {
-      "id": "fence-rail-57",
-      "asset": "fence-rail",
-      "x": 1563.6666666666667,
-      "y": 635.3333333333334,
-      "width": 64.66335217909804,
-      "height": 10,
-      "kind": "rail",
-      "angle": 27.220247540806614,
-      "wind": false,
-      "phase": 41.61
-    },
-    {
-      "id": "fence-rail-58",
-      "asset": "fence-rail",
-      "x": 1615.8333333333333,
-      "y": 627.1666666666666,
-      "width": 64.66335217909804,
-      "height": 10,
-      "kind": "rail",
-      "angle": 27.220247540806614,
-      "wind": false,
-      "phase": 42.34
-    },
-    {
-      "id": "fence-rail-59",
-      "asset": "fence-rail",
-      "x": 1615.8333333333333,
-      "y": 662.1666666666666,
-      "width": 64.66335217909804,
-      "height": 10,
-      "kind": "rail",
-      "angle": 27.220247540806614,
-      "wind": false,
-      "phase": 43.07
-    },
-    {
-      "id": "fence-post-60",
+      "id": "fence-post-46",
       "asset": "fence-post",
-      "x": 1350.0,
-      "y": 475.0,
-      "width": 13,
-      "height": 91,
+      "x": 1347.12458781362,
+      "y": 427.86,
+      "width": 5.7508243727598565,
+      "height": 50.14,
+      "groundY": 478,
       "kind": "post",
       "angle": 0,
       "wind": false,
-      "phase": 43.8
+      "phase": 33.58,
+      "heightMetres": 0.92,
+      "elevationMetres": 0,
+      "world": {
+        "x": 9.431192660550458,
+        "z": 18.34862385321101
+      }
+    },
+    {
+      "id": "rail-47",
+      "asset": "fence-rail",
+      "x": 1350,
+      "y": 460.0964680421302,
+      "width": 54.6329937959757,
+      "height": 5.287063915739584,
+      "angle": 10.79231066860445,
+      "wind": false,
+      "phase": 0,
+      "kind": "rail",
+      "heightMetres": 0.28,
+      "endpoints": [
+        [
+          1350,
+          462.74
+        ],
+        [
+          1403.6666666666667,
+          472.97
+        ]
+      ]
+    },
+    {
+      "id": "rail-48",
+      "asset": "fence-rail",
+      "x": 1350,
+      "y": 435.5820232684569,
+      "width": 54.41485245189146,
+      "height": 5.26595346308627,
+      "angle": 9.512233547147012,
+      "wind": false,
+      "phase": 0,
+      "kind": "rail",
+      "heightMetres": 0.73,
+      "endpoints": [
+        [
+          1350,
+          438.21500000000003
+        ],
+        [
+          1403.6666666666667,
+          447.2075
+        ]
+      ]
+    },
+    {
+      "id": "fence-post-49",
+      "asset": "fence-post",
+      "x": 1400.6461648745521,
+      "y": 436.33,
+      "width": 6.041003584229391,
+      "height": 52.67,
+      "groundY": 489,
+      "kind": "post",
+      "angle": 0,
+      "wind": false,
+      "phase": 35.769999999999996,
+      "heightMetres": 0.92,
+      "elevationMetres": 0,
+      "world": {
+        "x": 9.915574963609899,
+        "z": 17.467248908296945
+      }
+    },
+    {
+      "id": "rail-50",
+      "asset": "fence-rail",
+      "x": 1403.6666666666667,
+      "y": 470.3264680421303,
+      "width": 54.632993795975466,
+      "height": 5.287063915739561,
+      "angle": 10.792310668604438,
+      "wind": false,
+      "phase": 0,
+      "kind": "rail",
+      "heightMetres": 0.28,
+      "endpoints": [
+        [
+          1403.6666666666667,
+          472.97
+        ],
+        [
+          1457.3333333333333,
+          483.2
+        ]
+      ]
+    },
+    {
+      "id": "rail-51",
+      "asset": "fence-rail",
+      "x": 1403.6666666666667,
+      "y": 444.57452326845686,
+      "width": 54.41485245189124,
+      "height": 5.265953463086249,
+      "angle": 9.51223354714711,
+      "wind": false,
+      "phase": 0,
+      "kind": "rail",
+      "heightMetres": 0.73,
+      "endpoints": [
+        [
+          1403.6666666666667,
+          447.2075
+        ],
+        [
+          1457.3333333333333,
+          456.2
+        ]
+      ]
+    },
+    {
+      "id": "fence-post-52",
+      "asset": "fence-post",
+      "x": 1454.1677419354837,
+      "y": 444.8,
+      "width": 6.331182795698925,
+      "height": 55.2,
+      "groundY": 500,
+      "kind": "post",
+      "angle": 0,
+      "wind": false,
+      "phase": 37.96,
+      "heightMetres": 0.92,
+      "elevationMetres": 0,
+      "world": {
+        "x": 10.355555555555554,
+        "z": 16.666666666666668
+      }
+    },
+    {
+      "id": "rail-53",
+      "asset": "fence-rail",
+      "x": 1457.3333333333333,
+      "y": 480.5564680421302,
+      "width": 54.6329937959757,
+      "height": 5.287063915739584,
+      "angle": 10.79231066860445,
+      "wind": false,
+      "phase": 0,
+      "kind": "rail",
+      "heightMetres": 0.28,
+      "endpoints": [
+        [
+          1457.3333333333333,
+          483.2
+        ],
+        [
+          1511,
+          493.43
+        ]
+      ]
+    },
+    {
+      "id": "rail-54",
+      "asset": "fence-rail",
+      "x": 1457.3333333333333,
+      "y": 453.56702326845686,
+      "width": 54.41485245189148,
+      "height": 5.265953463086272,
+      "angle": 9.512233547147071,
+      "wind": false,
+      "phase": 0,
+      "kind": "rail",
+      "heightMetres": 0.73,
+      "endpoints": [
+        [
+          1457.3333333333333,
+          456.2
+        ],
+        [
+          1511,
+          465.1925
+        ]
+      ]
+    },
+    {
+      "id": "fence-post-55",
+      "asset": "fence-post",
+      "x": 1507.6893189964158,
+      "y": 453.27,
+      "width": 6.621362007168459,
+      "height": 57.730000000000004,
+      "groundY": 511,
+      "kind": "post",
+      "angle": 0,
+      "wind": false,
+      "phase": 40.15,
+      "heightMetres": 0.92,
+      "elevationMetres": 0,
+      "world": {
+        "x": 10.756972111553784,
+        "z": 15.936254980079681
+      }
+    },
+    {
+      "id": "rail-56",
+      "asset": "fence-rail",
+      "x": 1511,
+      "y": 490.7864680421302,
+      "width": 54.632993795975686,
+      "height": 5.287063915739583,
+      "angle": 10.792310668604394,
+      "wind": false,
+      "phase": 0,
+      "kind": "rail",
+      "heightMetres": 0.28,
+      "endpoints": [
+        [
+          1511,
+          493.43
+        ],
+        [
+          1564.6666666666667,
+          503.65999999999997
+        ]
+      ]
+    },
+    {
+      "id": "rail-57",
+      "asset": "fence-rail",
+      "x": 1511,
+      "y": 462.55952326845687,
+      "width": 54.41485245189148,
+      "height": 5.265953463086272,
+      "angle": 9.512233547147071,
+      "wind": false,
+      "phase": 0,
+      "kind": "rail",
+      "heightMetres": 0.73,
+      "endpoints": [
+        [
+          1511,
+          465.1925
+        ],
+        [
+          1564.6666666666667,
+          474.185
+        ]
+      ]
+    },
+    {
+      "id": "fence-post-58",
+      "asset": "fence-post",
+      "x": 1561.2108960573478,
+      "y": 461.74,
+      "width": 6.911541218637994,
+      "height": 60.260000000000005,
+      "groundY": 522,
+      "kind": "post",
+      "angle": 0,
+      "wind": false,
+      "phase": 42.339999999999996,
+      "heightMetres": 0.92,
+      "elevationMetres": 0,
+      "world": {
+        "x": 11.12468193384224,
+        "z": 15.267175572519085
+      }
+    },
+    {
+      "id": "rail-59",
+      "asset": "fence-rail",
+      "x": 1564.6666666666667,
+      "y": 501.0164680421302,
+      "width": 54.63299379597548,
+      "height": 5.287063915739563,
+      "angle": 10.792310668604495,
+      "wind": false,
+      "phase": 0,
+      "kind": "rail",
+      "heightMetres": 0.28,
+      "endpoints": [
+        [
+          1564.6666666666667,
+          503.65999999999997
+        ],
+        [
+          1618.3333333333333,
+          513.89
+        ]
+      ]
+    },
+    {
+      "id": "rail-60",
+      "asset": "fence-rail",
+      "x": 1564.6666666666667,
+      "y": 471.5520232684569,
+      "width": 54.41485245189124,
+      "height": 5.265953463086249,
+      "angle": 9.51223354714711,
+      "wind": false,
+      "phase": 0,
+      "kind": "rail",
+      "heightMetres": 0.73,
+      "endpoints": [
+        [
+          1564.6666666666667,
+          474.185
+        ],
+        [
+          1618.3333333333333,
+          483.1775
+        ]
+      ]
     },
     {
       "id": "fence-post-61",
       "asset": "fence-post",
-      "x": 1402.1666666666667,
-      "y": 501.8333333333333,
-      "width": 13,
-      "height": 91,
+      "x": 1614.7324731182798,
+      "y": 470.21,
+      "width": 7.201720430107527,
+      "height": 62.790000000000006,
+      "groundY": 533,
       "kind": "post",
       "angle": 0,
       "wind": false,
-      "phase": 44.53
+      "phase": 44.53,
+      "heightMetres": 0.92,
+      "elevationMetres": 0,
+      "world": {
+        "x": 11.462759462759465,
+        "z": 14.652014652014651
+      }
     },
     {
-      "id": "fence-post-62",
-      "asset": "fence-post",
-      "x": 1454.3333333333333,
-      "y": 528.6666666666666,
-      "width": 13,
-      "height": 91,
-      "kind": "post",
-      "angle": 0,
+      "id": "rail-62",
+      "asset": "fence-rail",
+      "x": 1618.3333333333335,
+      "y": 511.24646804213023,
+      "width": 54.63299379597548,
+      "height": 5.287063915739563,
+      "angle": 10.792310668604495,
       "wind": false,
-      "phase": 45.26
+      "phase": 0,
+      "kind": "rail",
+      "heightMetres": 0.28,
+      "endpoints": [
+        [
+          1618.3333333333335,
+          513.89
+        ],
+        [
+          1672,
+          524.12
+        ]
+      ]
     },
     {
-      "id": "fence-post-63",
-      "asset": "fence-post",
-      "x": 1506.5,
-      "y": 555.5,
-      "width": 13,
-      "height": 91,
-      "kind": "post",
-      "angle": 0,
+      "id": "rail-63",
+      "asset": "fence-rail",
+      "x": 1618.3333333333335,
+      "y": 480.5445232684569,
+      "width": 54.41485245189124,
+      "height": 5.265953463086249,
+      "angle": 9.51223354714711,
       "wind": false,
-      "phase": 45.99
+      "phase": 0,
+      "kind": "rail",
+      "heightMetres": 0.73,
+      "endpoints": [
+        [
+          1618.3333333333335,
+          483.1775
+        ],
+        [
+          1672,
+          492.17
+        ]
+      ]
     },
     {
       "id": "fence-post-64",
       "asset": "fence-post",
-      "x": 1558.6666666666667,
-      "y": 582.3333333333334,
-      "width": 13,
-      "height": 91,
+      "x": 1668.2540501792114,
+      "y": 478.68,
+      "width": 7.491899641577062,
+      "height": 65.32000000000001,
+      "groundY": 544,
       "kind": "post",
       "angle": 0,
       "wind": false,
-      "phase": 46.72
+      "phase": 46.72,
+      "heightMetres": 0.92,
+      "elevationMetres": 0,
+      "world": {
+        "x": 11.774647887323944,
+        "z": 14.084507042253522
+      }
     },
     {
       "id": "fence-post-65",
       "asset": "fence-post",
-      "x": 1610.8333333333333,
-      "y": 609.1666666666666,
-      "width": 13,
-      "height": 91,
+      "x": 1325.5286021505376,
+      "y": 521.03,
+      "width": 8.942795698924732,
+      "height": 77.97,
+      "groundY": 599,
       "kind": "post",
       "angle": 0,
       "wind": false,
-      "phase": 47.45
+      "phase": 47.449999999999996,
+      "heightMetres": 0.92,
+      "elevationMetres": 0,
+      "world": {
+        "x": 5.828908554572271,
+        "z": 11.799410029498524
+      }
     },
     {
-      "id": "fence-post-66",
-      "asset": "fence-post",
-      "x": 1663.0,
-      "y": 636.0,
-      "width": 13,
-      "height": 91,
-      "kind": "post",
-      "angle": 0,
-      "wind": false,
-      "phase": 48.18
-    },
-    {
-      "id": "fence-rail-76",
+      "id": "rail-66",
       "asset": "fence-rail",
-      "x": 1565.3333333333333,
-      "y": 476.6666666666667,
-      "width": 57.97889528987275,
-      "height": 10,
-      "kind": "rail",
-      "angle": 9.039482803355119,
+      "x": 1330,
+      "y": 572.3617486138351,
+      "width": 60.103861980741314,
+      "height": 5.816502772329805,
+      "angle": 18.493732255352644,
       "wind": false,
-      "phase": 55.48
+      "phase": 0,
+      "kind": "rail",
+      "heightMetres": 0.28,
+      "endpoints": [
+        [
+          1330,
+          575.27
+        ],
+        [
+          1387,
+          594.335
+        ]
+      ]
     },
     {
-      "id": "fence-rail-78",
+      "id": "rail-67",
       "asset": "fence-rail",
-      "x": 1616.6666666666667,
-      "y": 484.8333333333333,
-      "width": 57.97889528987275,
-      "height": 10,
-      "kind": "rail",
-      "angle": 9.039482803355119,
+      "x": 1330,
+      "y": 534.2576973187171,
+      "width": 59.412588746514814,
+      "height": 5.74960536256595,
+      "angle": 16.3840300451887,
       "wind": false,
-      "phase": 56.94
+      "phase": 0,
+      "kind": "rail",
+      "heightMetres": 0.73,
+      "endpoints": [
+        [
+          1330,
+          537.1325
+        ],
+        [
+          1387,
+          553.89125
+        ]
+      ]
     },
     {
-      "id": "fence-post-79",
+      "id": "fence-post-68",
       "asset": "fence-post",
-      "x": 1355.0,
-      "y": 391.0,
-      "width": 13,
-      "height": 91,
+      "x": 1382.2582078853047,
+      "y": 536.815,
+      "width": 9.483584229390681,
+      "height": 82.685,
+      "groundY": 619.5,
       "kind": "post",
       "angle": 0,
       "wind": false,
-      "phase": 57.67
+      "phase": 49.64,
+      "heightMetres": 0.92,
+      "elevationMetres": 0,
+      "world": {
+        "x": 6.130737134909596,
+        "z": 11.126564673157162
+      }
+    },
+    {
+      "id": "rail-69",
+      "asset": "fence-rail",
+      "x": 1387,
+      "y": 591.4267486138351,
+      "width": 60.10386198074128,
+      "height": 5.816502772329801,
+      "angle": 18.493732255352544,
+      "wind": false,
+      "phase": 0,
+      "kind": "rail",
+      "heightMetres": 0.28,
+      "endpoints": [
+        [
+          1387,
+          594.335
+        ],
+        [
+          1444,
+          613.4
+        ]
+      ]
+    },
+    {
+      "id": "rail-70",
+      "asset": "fence-rail",
+      "x": 1387,
+      "y": 551.016447318717,
+      "width": 59.412588746514814,
+      "height": 5.74960536256595,
+      "angle": 16.3840300451887,
+      "wind": false,
+      "phase": 0,
+      "kind": "rail",
+      "heightMetres": 0.73,
+      "endpoints": [
+        [
+          1387,
+          553.89125
+        ],
+        [
+          1444,
+          570.65
+        ]
+      ]
+    },
+    {
+      "id": "fence-post-71",
+      "asset": "fence-post",
+      "x": 1438.9878136200716,
+      "y": 552.6,
+      "width": 10.024372759856632,
+      "height": 87.4,
+      "groundY": 640,
+      "kind": "post",
+      "angle": 0,
+      "wind": false,
+      "phase": 51.83,
+      "heightMetres": 0.92,
+      "elevationMetres": 0,
+      "world": {
+        "x": 6.4,
+        "z": 10.526315789473685
+      }
+    },
+    {
+      "id": "rail-72",
+      "asset": "fence-rail",
+      "x": 1444,
+      "y": 610.4917486138351,
+      "width": 60.103861980741314,
+      "height": 5.816502772329805,
+      "angle": 18.493732255352644,
+      "wind": false,
+      "phase": 0,
+      "kind": "rail",
+      "heightMetres": 0.28,
+      "endpoints": [
+        [
+          1444,
+          613.4
+        ],
+        [
+          1501,
+          632.465
+        ]
+      ]
+    },
+    {
+      "id": "rail-73",
+      "asset": "fence-rail",
+      "x": 1444,
+      "y": 567.775197318717,
+      "width": 59.41258874651484,
+      "height": 5.749605362565952,
+      "angle": 16.38403004518881,
+      "wind": false,
+      "phase": 0,
+      "kind": "rail",
+      "heightMetres": 0.73,
+      "endpoints": [
+        [
+          1444,
+          570.65
+        ],
+        [
+          1501,
+          587.40875
+        ]
+      ]
+    },
+    {
+      "id": "fence-post-74",
+      "asset": "fence-post",
+      "x": 1495.7174193548387,
+      "y": 568.385,
+      "width": 10.565161290322582,
+      "height": 92.11500000000001,
+      "groundY": 660.5,
+      "kind": "post",
+      "angle": 0,
+      "wind": false,
+      "phase": 54.019999999999996,
+      "heightMetres": 0.92,
+      "elevationMetres": 0,
+      "world": {
+        "x": 6.641697877652934,
+        "z": 9.987515605493133
+      }
+    },
+    {
+      "id": "rail-75",
+      "asset": "fence-rail",
+      "x": 1501,
+      "y": 629.5567486138351,
+      "width": 60.10386198074128,
+      "height": 5.816502772329801,
+      "angle": 18.493732255352544,
+      "wind": false,
+      "phase": 0,
+      "kind": "rail",
+      "heightMetres": 0.28,
+      "endpoints": [
+        [
+          1501,
+          632.465
+        ],
+        [
+          1558,
+          651.53
+        ]
+      ]
+    },
+    {
+      "id": "rail-76",
+      "asset": "fence-rail",
+      "x": 1501,
+      "y": 584.5339473187171,
+      "width": 59.412588746514814,
+      "height": 5.74960536256595,
+      "angle": 16.3840300451887,
+      "wind": false,
+      "phase": 0,
+      "kind": "rail",
+      "heightMetres": 0.73,
+      "endpoints": [
+        [
+          1501,
+          587.40875
+        ],
+        [
+          1558,
+          604.1675
+        ]
+      ]
+    },
+    {
+      "id": "fence-post-77",
+      "asset": "fence-post",
+      "x": 1552.4470250896056,
+      "y": 584.17,
+      "width": 11.10594982078853,
+      "height": 96.83,
+      "groundY": 681,
+      "kind": "post",
+      "angle": 0,
+      "wind": false,
+      "phase": 56.21,
+      "heightMetres": 0.92,
+      "elevationMetres": 0,
+      "world": {
+        "x": 6.859857482185273,
+        "z": 9.501187648456057
+      }
+    },
+    {
+      "id": "rail-78",
+      "asset": "fence-rail",
+      "x": 1558,
+      "y": 648.621748613835,
+      "width": 60.103861980741314,
+      "height": 5.816502772329805,
+      "angle": 18.493732255352644,
+      "wind": false,
+      "phase": 0,
+      "kind": "rail",
+      "heightMetres": 0.28,
+      "endpoints": [
+        [
+          1558,
+          651.53
+        ],
+        [
+          1615,
+          670.595
+        ]
+      ]
+    },
+    {
+      "id": "rail-79",
+      "asset": "fence-rail",
+      "x": 1558,
+      "y": 601.292697318717,
+      "width": 59.412588746514814,
+      "height": 5.74960536256595,
+      "angle": 16.3840300451887,
+      "wind": false,
+      "phase": 0,
+      "kind": "rail",
+      "heightMetres": 0.73,
+      "endpoints": [
+        [
+          1558,
+          604.1675
+        ],
+        [
+          1615,
+          620.92625
+        ]
+      ]
     },
     {
       "id": "fence-post-80",
       "asset": "fence-post",
-      "x": 1406.3333333333333,
-      "y": 399.1666666666667,
-      "width": 13,
-      "height": 91,
+      "x": 1609.1766308243728,
+      "y": 599.955,
+      "width": 11.64673835125448,
+      "height": 101.545,
+      "groundY": 701.5,
       "kind": "post",
       "angle": 0,
       "wind": false,
-      "phase": 58.4
+      "phase": 58.4,
+      "heightMetres": 0.92,
+      "elevationMetres": 0,
+      "world": {
+        "x": 7.057757644394111,
+        "z": 9.060022650056625
+      }
     },
     {
-      "id": "fence-post-81",
-      "asset": "fence-post",
-      "x": 1457.6666666666667,
-      "y": 407.3333333333333,
-      "width": 13,
-      "height": 91,
-      "kind": "post",
-      "angle": 0,
+      "id": "rail-81",
+      "asset": "fence-rail",
+      "x": 1615,
+      "y": 667.6867486138351,
+      "width": 60.10386198074128,
+      "height": 5.816502772329801,
+      "angle": 18.493732255352544,
       "wind": false,
-      "phase": 59.13
+      "phase": 0,
+      "kind": "rail",
+      "heightMetres": 0.28,
+      "endpoints": [
+        [
+          1615,
+          670.595
+        ],
+        [
+          1672,
+          689.66
+        ]
+      ]
     },
     {
-      "id": "fence-post-82",
-      "asset": "fence-post",
-      "x": 1509.0,
-      "y": 415.5,
-      "width": 13,
-      "height": 91,
-      "kind": "post",
-      "angle": 0,
+      "id": "rail-82",
+      "asset": "fence-rail",
+      "x": 1615,
+      "y": 618.051447318717,
+      "width": 59.412588746514814,
+      "height": 5.74960536256595,
+      "angle": 16.3840300451887,
       "wind": false,
-      "phase": 59.86
+      "phase": 0,
+      "kind": "rail",
+      "heightMetres": 0.73,
+      "endpoints": [
+        [
+          1615,
+          620.92625
+        ],
+        [
+          1672,
+          637.685
+        ]
+      ]
     },
     {
       "id": "fence-post-83",
       "asset": "fence-post",
-      "x": 1560.3333333333333,
-      "y": 423.6666666666667,
-      "width": 13,
-      "height": 91,
+      "x": 1665.9062365591399,
+      "y": 615.74,
+      "width": 12.18752688172043,
+      "height": 106.26,
+      "groundY": 722,
       "kind": "post",
       "angle": 0,
       "wind": false,
-      "phase": 60.59
+      "phase": 60.589999999999996,
+      "heightMetres": 0.92,
+      "elevationMetres": 0,
+      "world": {
+        "x": 7.238095238095238,
+        "z": 8.658008658008658
+      }
     },
     {
       "id": "fence-post-84",
       "asset": "fence-post",
-      "x": 1611.6666666666667,
-      "y": 431.8333333333333,
-      "width": 13,
-      "height": 91,
+      "x": 34.7921146953405,
+      "y": 482,
+      "width": 20.415770609318997,
+      "height": 178,
+      "groundY": 660,
       "kind": "post",
       "angle": 0,
       "wind": false,
-      "phase": 61.32
+      "phase": 61.32,
+      "heightMetres": 1.78,
+      "elevationMetres": 0,
+      "world": {
+        "x": -7.91,
+        "z": 10
+      }
     },
     {
       "id": "fence-post-85",
       "asset": "fence-post",
-      "x": 1663.0,
-      "y": 440.0,
-      "width": 13,
-      "height": 91,
+      "x": 319.7921146953405,
+      "y": 482,
+      "width": 20.415770609318997,
+      "height": 178,
+      "groundY": 660,
       "kind": "post",
       "angle": 0,
       "wind": false,
-      "phase": 62.05
+      "phase": 62.05,
+      "heightMetres": 1.78,
+      "elevationMetres": 0,
+      "world": {
+        "x": -5.06,
+        "z": 10
+      }
     },
     {
-      "id": "fence-post-86",
-      "asset": "fence-post",
-      "x": 39,
-      "y": 454,
-      "width": 17,
-      "height": 194,
-      "kind": "post",
+      "id": "laundry-86",
+      "asset": "laundry",
+      "x": 44.083333333333336,
+      "y": 483,
+      "width": 101.83333333333333,
+      "height": 94,
+      "groundY": 660,
+      "kind": "cloth",
       "angle": 0,
-      "wind": false,
-      "phase": 62.78
+      "wind": true,
+      "phase": 62.78,
+      "heightMetres": 0.94,
+      "elevationMetres": 0.83,
+      "world": {
+        "x": -7.41,
+        "z": 10
+      }
     },
     {
-      "id": "fence-post-87",
-      "asset": "fence-post",
-      "x": 266,
-      "y": 454,
-      "width": 17,
-      "height": 194,
-      "kind": "post",
+      "id": "laundry-87",
+      "asset": "laundry",
+      "x": 137.08333333333334,
+      "y": 483,
+      "width": 101.83333333333333,
+      "height": 94,
+      "groundY": 660,
+      "kind": "cloth",
       "angle": 0,
-      "wind": false,
-      "phase": 63.51
+      "wind": true,
+      "phase": 63.51,
+      "heightMetres": 0.94,
+      "elevationMetres": 0.83,
+      "world": {
+        "x": -6.48,
+        "z": 10
+      }
     },
     {
       "id": "laundry-88",
       "asset": "laundry",
-      "x": 49,
-      "y": 467,
-      "width": 79,
-      "height": 121,
+      "x": 230.08333333333334,
+      "y": 483,
+      "width": 101.83333333333333,
+      "height": 94,
+      "groundY": 660,
       "kind": "cloth",
       "angle": 0,
       "wind": true,
-      "phase": 64.24
+      "phase": 64.24,
+      "heightMetres": 0.94,
+      "elevationMetres": 0.83,
+      "world": {
+        "x": -5.55,
+        "z": 10
+      }
     },
     {
-      "id": "laundry-89",
-      "asset": "laundry",
-      "x": 117,
-      "y": 460,
-      "width": 79,
-      "height": 121,
-      "kind": "cloth",
-      "angle": 0,
-      "wind": true,
-      "phase": 64.97
-    },
-    {
-      "id": "laundry-90",
-      "asset": "laundry",
-      "x": 185,
-      "y": 453,
-      "width": 79,
-      "height": 121,
-      "kind": "cloth",
-      "angle": 0,
-      "wind": true,
-      "phase": 65.7
-    },
-    {
-      "id": "tree-trunk-91",
+      "id": "tree-trunk-89",
       "asset": "tree-trunk",
-      "x": -107,
-      "y": 20,
-      "width": 408,
-      "height": 533,
+      "x": -187.58992805755395,
+      "y": 58.5,
+      "width": 515.1798561151079,
+      "height": 511.5,
+      "groundY": 570,
       "kind": "trunk",
       "angle": 0,
       "wind": false,
-      "phase": 66.43
+      "phase": 64.97,
+      "heightMetres": 6.6,
+      "elevationMetres": 0,
+      "world": {
+        "x": -9.883870967741936,
+        "z": 12.903225806451612
+      }
     },
     {
-      "id": "tree-canopy-92",
+      "id": "canopy-90",
       "asset": "tree-canopy",
-      "x": -140,
-      "y": -45,
-      "width": 490,
-      "height": 245,
+      "x": -218.75,
+      "y": -57.32456140350877,
+      "width": 387.5,
+      "height": 274.64912280701753,
       "kind": "canopy",
       "angle": 0,
       "wind": true,
-      "phase": 67.16
+      "phase": 65.7,
+      "group": "courtyard-tree",
+      "groundY": 570
     },
     {
-      "id": "tree-canopy-93",
+      "id": "canopy-91",
       "asset": "tree-canopy",
-      "x": 87,
-      "y": -80,
-      "width": 467,
-      "height": 249,
+      "x": 75.625,
+      "y": -103.59210526315789,
+      "width": 348.75,
+      "height": 247.18421052631578,
       "kind": "canopy",
       "angle": 0,
       "wind": true,
-      "phase": 67.89
+      "phase": 66.42999999999999,
+      "group": "courtyard-tree",
+      "groundY": 570
     },
     {
-      "id": "tree-canopy-94",
+      "id": "canopy-92",
       "asset": "tree-canopy",
-      "x": -145,
-      "y": 145,
-      "width": 340,
-      "height": 185,
+      "x": -190.125,
+      "y": 159.85877192982457,
+      "width": 240.25,
+      "height": 170.2824561403509,
       "kind": "canopy",
       "angle": 0,
       "wind": true,
-      "phase": 68.62
+      "phase": 67.16,
+      "group": "courtyard-tree",
+      "groundY": 570
     },
     {
-      "id": "rock-99",
+      "id": "rock-93",
       "asset": "rock",
-      "x": 0,
-      "y": 772,
-      "width": 185,
-      "height": 143,
+      "x": -39.34691011235955,
+      "y": 752.125,
+      "width": 208.6938202247191,
+      "height": 142.875,
+      "groundY": 895,
       "kind": "rock",
       "angle": 0,
       "wind": false,
-      "phase": 72.27
+      "phase": 67.89,
+      "heightMetres": 0.9,
+      "elevationMetres": 0,
+      "world": {
+        "x": -4.856692913385827,
+        "z": 6.299212598425197
+      }
     },
     {
-      "id": "rock-100",
+      "id": "rock-94",
       "asset": "rock",
-      "x": 137,
-      "y": 835,
-      "width": 184,
-      "height": 110,
+      "x": 143.25842696629212,
+      "y": 800.8,
+      "width": 197.48314606741576,
+      "height": 135.20000000000002,
+      "groundY": 936,
       "kind": "rock",
       "angle": 0,
       "wind": false,
-      "phase": 73.0
+      "phase": 68.62,
+      "heightMetres": 0.8,
+      "elevationMetres": 0,
+      "world": {
+        "x": -3.514792899408284,
+        "z": 5.9171597633136095
+      }
     },
     {
-      "id": "rock-101",
+      "id": "rock-95",
       "asset": "rock",
-      "x": 1495,
-      "y": 816,
-      "width": 192,
-      "height": 148,
+      "x": 1455.8426966292134,
+      "y": 770,
+      "width": 248.31460674157304,
+      "height": 170,
+      "groundY": 940,
       "kind": "rock",
       "angle": 0,
       "wind": false,
-      "phase": 73.73
+      "phase": 69.35,
+      "heightMetres": 1,
+      "elevationMetres": 0,
+      "world": {
+        "x": 4.376470588235295,
+        "z": 5.882352941176471
+      }
     },
     {
-      "id": "rock-102",
+      "id": "rock-96",
       "asset": "rock",
-      "x": 1565,
-      "y": 738,
-      "width": 119,
-      "height": 102,
+      "x": 1567.7879213483145,
+      "y": 726.125,
+      "width": 144.42415730337078,
+      "height": 98.875,
+      "groundY": 825,
       "kind": "rock",
       "angle": 0,
       "wind": false,
-      "phase": 74.46
+      "phase": 70.08,
+      "heightMetres": 0.7,
+      "elevationMetres": 0,
+      "world": {
+        "x": 5.692035398230089,
+        "z": 7.079646017699115
+      }
     },
     {
-      "id": "grass-103",
+      "id": "grass-97",
       "asset": "grass",
-      "x": 0,
-      "y": 664,
-      "width": 43,
-      "height": 51,
+      "x": -20.77263157894737,
+      "y": 671.4,
+      "width": 41.54526315789474,
+      "height": 28.6,
+      "groundY": 700,
       "kind": "plant",
       "angle": 0,
       "wind": true,
-      "phase": 75.19
+      "phase": 70.81,
+      "heightMetres": 0.26,
+      "elevationMetres": 0,
+      "world": {
+        "x": -7.6,
+        "z": 9.090909090909092
+      }
     },
     {
-      "id": "white-flower-104",
-      "asset": "white-flower",
-      "x": 1417,
-      "y": 705,
-      "width": 52,
-      "height": 64,
+      "id": "white-flower-planted-98",
+      "asset": "white-flower-planted",
+      "x": 1397.8977864583333,
+      "y": 704.32375,
+      "width": 38.204427083333336,
+      "height": 36.676249999999996,
+      "groundY": 741,
       "kind": "plant",
       "angle": 0,
       "wind": true,
-      "phase": 75.92
+      "phase": 71.53999999999999,
+      "heightMetres": 0.305,
+      "elevationMetres": 0,
+      "world": {
+        "x": 4.831600831600832,
+        "z": 8.316008316008316
+      }
     },
     {
-      "id": "yellow-flower-105",
-      "asset": "yellow-flower",
-      "x": 118,
-      "y": 746,
-      "width": 61,
-      "height": 77,
+      "id": "yellow-flower-planted-99",
+      "asset": "yellow-flower-planted",
+      "x": 91.97842548076923,
+      "y": 736.325,
+      "width": 52.04314903846153,
+      "height": 45.675,
+      "groundY": 782,
       "kind": "plant",
       "angle": 0,
       "wind": true,
-      "phase": 76.65
+      "phase": 72.27,
+      "heightMetres": 0.35,
+      "elevationMetres": 0,
+      "world": {
+        "x": -5.501915708812261,
+        "z": 7.662835249042145
+      }
     },
     {
-      "id": "herb-106",
-      "asset": "herb",
-      "x": 1511,
-      "y": 787,
-      "width": 70,
-      "height": 90,
+      "id": "herb-planted-100",
+      "asset": "herb-planted",
+      "x": 1480.2782716049383,
+      "y": 786.405,
+      "width": 61.443456790123456,
+      "height": 36.595,
+      "groundY": 823,
       "kind": "plant",
       "angle": 0,
       "wind": true,
-      "phase": 77.38
+      "phase": 73,
+      "heightMetres": 0.26,
+      "elevationMetres": 0,
+      "world": {
+        "x": 4.7957371225577266,
+        "z": 7.104795737122558
+      }
     },
     {
-      "id": "grass-107",
+      "id": "grass-101",
       "asset": "grass",
-      "x": 236,
-      "y": 828,
-      "width": 43,
-      "height": 51,
+      "x": 202.54952631578948,
+      "y": 817.945,
+      "width": 66.90094736842106,
+      "height": 46.055,
+      "groundY": 864,
       "kind": "plant",
       "angle": 0,
       "wind": true,
-      "phase": 78.11
+      "phase": 73.73,
+      "heightMetres": 0.305,
+      "elevationMetres": 0,
+      "world": {
+        "x": -3.9735099337748343,
+        "z": 6.622516556291391
+      }
     },
     {
-      "id": "white-flower-108",
-      "asset": "white-flower",
-      "x": 1605,
-      "y": 869,
-      "width": 52,
-      "height": 64,
+      "id": "white-flower-planted-102",
+      "asset": "white-flower-planted",
+      "x": 1575.60546875,
+      "y": 848.5625,
+      "width": 58.78906249999999,
+      "height": 56.43749999999999,
+      "groundY": 905,
       "kind": "plant",
       "angle": 0,
       "wind": true,
-      "phase": 78.84
+      "phase": 74.46,
+      "heightMetres": 0.35,
+      "elevationMetres": 0,
+      "world": {
+        "x": 4.768992248062015,
+        "z": 6.2015503875969
+      }
     },
     {
-      "id": "yellow-flower-109",
-      "asset": "yellow-flower",
-      "x": 74,
-      "y": 665,
-      "width": 61,
-      "height": 77,
+      "id": "yellow-flower-planted-103",
+      "asset": "yellow-flower-planted",
+      "x": 47.113749999999996,
+      "y": 686.36,
+      "width": 33.7725,
+      "height": 29.64,
+      "groundY": 716,
       "kind": "plant",
       "angle": 0,
       "wind": true,
-      "phase": 79.57
+      "phase": 75.19,
+      "heightMetres": 0.26,
+      "elevationMetres": 0,
+      "world": {
+        "x": -6.771929824561403,
+        "z": 8.771929824561404
+      }
     },
     {
-      "id": "herb-110",
-      "asset": "herb",
-      "x": 1459,
-      "y": 706,
-      "width": 70,
-      "height": 90,
+      "id": "herb-planted-104",
+      "asset": "herb-planted",
+      "x": 1422.185864197531,
+      "y": 719.10375,
+      "width": 63.62827160493828,
+      "height": 37.89625,
+      "groundY": 757,
       "kind": "plant",
       "angle": 0,
       "wind": true,
-      "phase": 80.3
+      "phase": 75.92,
+      "heightMetres": 0.305,
+      "elevationMetres": 0,
+      "world": {
+        "x": 4.9738430583501,
+        "z": 8.048289738430583
+      }
     },
     {
-      "id": "grass-111",
+      "id": "grass-105",
       "asset": "grass",
-      "x": 192,
-      "y": 747,
-      "width": 43,
-      "height": 51,
+      "x": 147.8086842105263,
+      "y": 750.925,
+      "width": 68.38263157894737,
+      "height": 47.074999999999996,
+      "groundY": 798,
       "kind": "plant",
       "angle": 0,
       "wind": true,
-      "phase": 81.03
+      "phase": 76.64999999999999,
+      "heightMetres": 0.35,
+      "elevationMetres": 0,
+      "world": {
+        "x": -4.862453531598513,
+        "z": 7.434944237918216
+      }
     },
     {
-      "id": "white-flower-112",
-      "asset": "white-flower",
-      "x": 1553,
-      "y": 788,
-      "width": 52,
-      "height": 64,
+      "id": "white-flower-planted-106",
+      "asset": "white-flower-planted",
+      "x": 1528.3984375,
+      "y": 801.365,
+      "width": 39.203125,
+      "height": 37.635,
+      "groundY": 839,
       "kind": "plant",
       "angle": 0,
       "wind": true,
-      "phase": 81.76
+      "phase": 77.38,
+      "heightMetres": 0.26,
+      "elevationMetres": 0,
+      "world": {
+        "x": 4.918825561312608,
+        "z": 6.90846286701209
+      }
     },
     {
-      "id": "yellow-flower-113",
-      "asset": "yellow-flower",
-      "x": 30,
-      "y": 829,
-      "width": 61,
-      "height": 77,
+      "id": "yellow-flower-planted-107",
+      "asset": "yellow-flower-planted",
+      "x": -16.93311298076923,
+      "y": 832.725,
+      "width": 53.86622596153846,
+      "height": 47.275,
+      "groundY": 880,
       "kind": "plant",
       "angle": 0,
       "wind": true,
-      "phase": 82.49
+      "phase": 78.11,
+      "heightMetres": 0.305,
+      "elevationMetres": 0,
+      "world": {
+        "x": -5.329032258064516,
+        "z": 6.451612903225806
+      }
     },
     {
-      "id": "herb-114",
-      "asset": "herb",
-      "x": 1407,
-      "y": 870,
-      "width": 70,
-      "height": 90,
+      "id": "herb-planted-108",
+      "asset": "herb-planted",
+      "x": 1348.445061728395,
+      "y": 863.1625,
+      "width": 97.10987654320988,
+      "height": 57.8375,
+      "groundY": 921,
       "kind": "plant",
       "angle": 0,
       "wind": true,
-      "phase": 83.22
+      "phase": 78.84,
+      "heightMetres": 0.35,
+      "elevationMetres": 0,
+      "world": {
+        "x": 3.394856278366112,
+        "z": 6.05143721633888
+      }
     },
     {
-      "id": "grass-115",
+      "id": "grass-109",
       "asset": "grass",
-      "x": 148,
-      "y": 666,
-      "width": 43,
-      "height": 51,
+      "x": 105.71663157894737,
+      "y": 701.32,
+      "width": 44.566736842105264,
+      "height": 30.68,
+      "groundY": 732,
       "kind": "plant",
       "angle": 0,
       "wind": true,
-      "phase": 83.95
+      "phase": 79.57,
+      "heightMetres": 0.26,
+      "elevationMetres": 0,
+      "world": {
+        "x": -6,
+        "z": 8.474576271186441
+      }
     },
     {
-      "id": "white-flower-116",
-      "asset": "white-flower",
-      "x": 1501,
-      "y": 707,
-      "width": 52,
-      "height": 64,
+      "id": "white-flower-planted-110",
+      "asset": "white-flower-planted",
+      "x": 1470.626953125,
+      "y": 733.88375,
+      "width": 40.74609375,
+      "height": 39.11625,
+      "groundY": 773,
       "kind": "plant",
       "angle": 0,
       "wind": true,
-      "phase": 84.68
+      "phase": 80.3,
+      "heightMetres": 0.305,
+      "elevationMetres": 0,
+      "world": {
+        "x": 5.107212475633529,
+        "z": 7.797270955165692
+      }
     },
     {
-      "id": "yellow-flower-117",
-      "asset": "yellow-flower",
-      "x": 266,
-      "y": 748,
-      "width": 61,
-      "height": 77,
+      "id": "yellow-flower-planted-111",
+      "asset": "yellow-flower-planted",
+      "x": 218.38323317307692,
+      "y": 765.525,
+      "width": 55.23353365384615,
+      "height": 48.474999999999994,
+      "groundY": 814,
       "kind": "plant",
       "angle": 0,
       "wind": true,
-      "phase": 85.41
+      "phase": 81.03,
+      "heightMetres": 0.35,
+      "elevationMetres": 0,
+      "world": {
+        "x": -4.259927797833935,
+        "z": 7.2202166064981945
+      }
     },
     {
-      "id": "herb-118",
-      "asset": "herb",
-      "x": 1595,
-      "y": 789,
-      "width": 70,
-      "height": 90,
+      "id": "herb-planted-112",
+      "asset": "herb-planted",
+      "x": 1552.532098765432,
+      "y": 816.325,
+      "width": 64.93580246913581,
+      "height": 38.675000000000004,
+      "groundY": 855,
       "kind": "plant",
       "angle": 0,
       "wind": true,
-      "phase": 86.14
+      "phase": 81.75999999999999,
+      "heightMetres": 0.26,
+      "elevationMetres": 0,
+      "world": {
+        "x": 5.035294117647059,
+        "z": 6.722689075630252
+      }
     },
     {
-      "id": "grass-119",
+      "id": "grass-113",
       "asset": "grass",
-      "x": 104,
-      "y": 830,
-      "width": 43,
-      "height": 51,
+      "x": 38.77731578947369,
+      "y": 847.505,
+      "width": 70.44536842105262,
+      "height": 48.495,
+      "groundY": 896,
       "kind": "plant",
       "angle": 0,
       "wind": true,
-      "phase": 86.87
+      "phase": 82.49,
+      "heightMetres": 0.305,
+      "elevationMetres": 0,
+      "world": {
+        "x": -4.7924528301886795,
+        "z": 6.289308176100629
+      }
+    },
+    {
+      "id": "white-flower-planted-114",
+      "asset": "white-flower-planted",
+      "x": 1413.62890625,
+      "y": 667.8875,
+      "width": 40.7421875,
+      "height": 39.1125,
+      "groundY": 707,
+      "kind": "plant",
+      "angle": 0,
+      "wind": true,
+      "phase": 83.22,
+      "heightMetres": 0.35,
+      "elevationMetres": 0,
+      "world": {
+        "x": 5.351230425055928,
+        "z": 8.94854586129754
+      }
     }
   ],
+  "registration": {
+    "parts": [
+      {
+        "asset": "coherent-house-roof",
+        "kind": "house-part",
+        "offset": [
+          0,
+          0
+        ],
+        "order": 1,
+        "size": [
+          1679,
+          302
+        ]
+      },
+      {
+        "asset": "coherent-house-window-left",
+        "kind": "house-part",
+        "offset": [
+          247,
+          340
+        ],
+        "order": 1,
+        "size": [
+          241,
+          248
+        ]
+      },
+      {
+        "asset": "coherent-house-window-right",
+        "kind": "house-part",
+        "offset": [
+          1187,
+          340
+        ],
+        "order": 1,
+        "size": [
+          241,
+          248
+        ]
+      },
+      {
+        "asset": "coherent-house-door",
+        "kind": "house-part",
+        "offset": [
+          667,
+          336
+        ],
+        "order": 1,
+        "size": [
+          338,
+          375
+        ]
+      },
+      {
+        "asset": "coherent-house-column-left",
+        "kind": "house-part",
+        "offset": [
+          81,
+          302
+        ],
+        "order": 1,
+        "size": [
+          73,
+          430
+        ]
+      },
+      {
+        "asset": "coherent-house-column-centre-left",
+        "kind": "house-part",
+        "offset": [
+          542,
+          302
+        ],
+        "order": 1,
+        "size": [
+          78,
+          430
+        ]
+      },
+      {
+        "asset": "coherent-house-column-centre-right",
+        "kind": "house-part",
+        "offset": [
+          1073,
+          302
+        ],
+        "order": 1,
+        "size": [
+          78,
+          430
+        ]
+      },
+      {
+        "asset": "coherent-house-column-right",
+        "kind": "house-part",
+        "offset": [
+          1529,
+          302
+        ],
+        "order": 1,
+        "size": [
+          70,
+          430
+        ]
+      },
+      {
+        "asset": "coherent-house-foundation",
+        "kind": "house-part",
+        "offset": [
+          77,
+          709
+        ],
+        "order": 1,
+        "size": [
+          1522,
+          92
+        ]
+      },
+      {
+        "asset": "coherent-house-wall",
+        "kind": "house-part",
+        "offset": [
+          78,
+          302
+        ],
+        "order": 0,
+        "size": [
+          1451,
+          407
+        ]
+      }
+    ],
+    "reconstructionMismatch": 0,
+    "source": "docs/perspective-v2/house-coherent-source.png",
+    "sourceSize": [
+      1679,
+      801
+    ]
+  },
   "colliders": [
     {
       "id": "main-house",
       "polygon": [
         [
-          455,
-          310
+          462.81947565543067,
+          450
         ],
         [
-          1135,
-          310
+          1177.1805243445692,
+          450
         ],
         [
-          1135,
-          505
+          1177.1805243445692,
+          544
         ],
         [
-          455,
-          505
+          462.81947565543067,
+          544
         ]
       ],
       "entrance": [
-        812,
-        505
-      ]
-    },
-    {
-      "id": "garden",
-      "polygon": [
-        [
-          1350,
-          400
-        ],
-        [
-          1672,
-          440
-        ],
-        [
-          1672,
-          730
-        ],
-        [
-          1330,
-          540
-        ]
+        820,
+        544
       ]
     }
   ],
   "notes": [
-    "Reconstructed from reference, not pixel-identical extraction.",
-    "Plants contain full roots in library; roots are buried in assembly.",
-    "Collision authoring data only: current game has stationary clickable NPCs."
+    "Same-view registered building parts. No independent roof/wall stretching.",
+    "All free-standing objects share a metric ground projection.",
+    "Collision polygon is authoring data; current NPCs stay at work stations."
   ]
 }
